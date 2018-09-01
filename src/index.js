@@ -1,3 +1,11 @@
+/**
+ * @author sl
+ * 更换服务器：style.sources.tiles[0] 更换内容
+ * 1. ip + host
+ * 2. TeacherLang ---> 对应的空间名称
+ * 4. 3AZJDemoLayers ----> 对应的图层名称
+ */
+
 import mapboxgl from 'mapbox-gl';
 // import sprite from './sprite.json';
 

@@ -4,8 +4,8 @@
 /docs/pages/dist/mapbox-gl-dev.js
 /docs/pages/dist/mapbox-gl.js
 *.js.map
-node_modules
-package-lock.json
+# node_modules
+# package-lock.json
 *.sublime-*
 coverage
 flow-coverage

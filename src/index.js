@@ -3,7 +3,7 @@
  * 更换服务器：style.sources.tiles[0] 更换内容
  * 1. ip + host
  * 2. TeacherLang ---> 对应的空间名称
- * 4. 3AZJDemoLayers ----> 对应的图层名称
+ * 3. 3AZJDemoLayers ----> 对应的图层名称
  */
 
 import mapboxgl from 'mapbox-gl';
@@ -25,6 +25,7 @@ var style = {
       ]
     }
   },
+  // 点没出来
   sprite: 'mapbox://sprites/mapbox/dark-v9',
   glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf',
   visibility: 'public',
@@ -33,14 +34,15 @@ var style = {
       type: 'background',
       layout: {},
       paint: {
-        'background-color': 'white'
+        'background-color': 'rgba(0, 0, 0, 0.5)'
       }
     },
+
     {
       id: 'landcover_wood',
       type: 'fill',
       source: 'composite',
-      'source-layer': 'HYD_PY',
+      'source-layer': 'HYD_PY', // py是面
       layout: {},
       paint: {
         'fill-color': 'hsl(55, 1%, 20%)',
@@ -52,7 +54,7 @@ var style = {
       id: 'HYD_LN',
       type: 'line',
       source: 'composite',
-      'source-layer': 'HYD_LN',
+      'source-layer': 'HYD_LN', // LN，line的简写
       layout: {
         'line-cap': 'round',
         'line-join': 'round'
@@ -97,7 +99,7 @@ var style = {
       id: 'marine-label-lg-ln',
       type: 'symbol',
       source: 'composite',
-      'source-layer': 'HYD_PT',
+      'source-layer': 'HYD_PT', // PT，point的简写
       layout: {
         'text-field': '{FNAME}',
         'text-pitch-alignment': 'viewport',

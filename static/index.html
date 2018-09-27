@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title></title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.29.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <style>
+    .legend {
+      background-color: #fff;
+      border-radius: 3px;
+      bottom: 30px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.10);
+      font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      padding: 10px;
+      position: absolute;
+      right: 10px;
+      z-index: 1;
+    }
+
+    .legend h4 {
+      margin: 0 0 10px;
+    }
+
+    .legend div span {
+      border-radius: 50%;
+      display: inline-block;
+      height: 10px;
+      margin-right: 5px;
+      width: 10px;
+    }
+  </style>
+
+  <div id='map'></div>
+
+  <div id='state-legend' class='legend'> /* 图例1 */
+    <h4>Population</h4>
+    <div><span style='background-color: #723122'></span>25,000,000</div>
+    <div><span style='background-color: #8B4225'></span>10,000,000</div>
+    <div><span style='background-color: #A25626'></span>7,500,000</div>
+    <div><span style='background-color: #B86B25'></span>5,000,000</div>
+    <div><span style='background-color: #CA8323'></span>2,500,000</div>
+    <div><span style='background-color: #DA9C20'></span>1,000,000</div>
+    <div><span style='background-color: #E6B71E'></span>750,000</div>
+    <div><span style='background-color: #EED322'></span>500,000</div>
+    <div><span style='background-color: #F2F12D'></span>0</div>
+  </div>
+
+  <div id='county-legend' class='legend' style='display: none;'> /* 图例2*/
+    <h4>Population</h4>
+    <div><span style='background-color: #723122'></span>1,000,000</div>
+    <div><span style='background-color: #8B4225'></span>500,000</div>
+    <div><span style='background-color: #A25626'></span>100,000</div>
+    <div><span style='background-color: #B86B25'></span>50,000</div>
+    <div><span style='background-color: #CA8323'></span>10,000</div>
+    <div><span style='background-color: #DA9C20'></span>5,000</div>
+    <div><span style='background-color: #E6B71E'></span>1,000</div>
+    <div><span style='background-color: #EED322'></span>100</div>
+    <div><span style='background-color: #F2F12D'></span>0</div>
+  </div>
+
+  <script>
+    mapboxgl.accessToken = '<your access token here>';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/light-v9',
+      center: [-98, 38.88],
+      minZoom: 3,
+      zoom: 3
+    });
+
+    var zoomThreshold = 4;
+
+    map.on('load', function () {
+
+      map.addSource('population', {
+        'type': 'vector',
+        /* 矢量瓦片数据 */
+        'url': 'mapbox://mapbox.660ui7x6' /* vector 类型数据url格式必须是mapbox://格式*/
+      });
+      /* 通过两个layer从同一个数据源进行不同的显示 */
+      map.addLayer({
+        'id': 'state-population',
+        'source': 'population',
+        'source-layer': 'state_county_population_2014_cen',
+        /* 所有使用vector类型资源的layer必须指定"source-layer"属性值 */
+        'maxzoom': zoomThreshold,
+        /* layer的最大缩放水平 */
+        'type': 'fill',
+        /* 用来显示面 */
+        'filter': ['==', 'isState', true],
+        /* 过滤州的数据 */
+        'paint': {
+          'fill-color': {
+            property: 'population',
+            /* 函数的输入来源，population属性值 */
+            stops: [ /* Property function */
+              [0, '#F2F12D'], /* 不同的population的值绘制相应的填充颜色 */
+              [500000, '#EED322'],
+              [750000, '#E6B71E'],
+              [1000000, '#DA9C20'],
+              [2500000, '#CA8323'],
+              [5000000, '#B86B25'],
+              [7500000, '#A25626'],
+              [10000000, '#8B4225'],
+              [25000000, '#723122']
+            ]
+          },
+          'fill-opacity': 0.75 /* 填充透明度 */
+        }
+      }, 'waterway-label');
+
+      map.addLayer({
+        'id': 'county-population',
+        'source': 'population',
+        'source-layer': 'state_county_population_2014_cen',
+        'minzoom': zoomThreshold,
+        /* 最小缩放水平，越大越显示越具体 */
+        'type': 'fill',
+        'filter': ['==', 'isCounty', true],
+        /* 过滤郡的数据 */
+        'paint': {
+          'fill-color': {
+            property: 'population',
+            stops: [
+              [0, '#F2F12D'],
+              [100, '#EED322'],
+              [1000, '#E6B71E'],
+              [5000, '#DA9C20'],
+              [10000, '#CA8323'],
+              [50000, '#B86B25'],
+              [100000, '#A25626'],
+              [500000, '#8B4225'],
+              [1000000, '#723122']
+            ]
+          },
+          'fill-opacity': 0.75
+        }
+      }, 'waterway-label');
+
+    });
+
+    var stateLegendEl = document.getElementById('state-legend'); /* 获取对应id的DOM元素 */
+    var countyLegendEl = document.getElementById('county-legend');
+    map.on('zoom', function () { /* 为zoom事件添加监听器 */
+      if (map.getZoom() > zoomThreshold) { /* getZoom获取当前的zoom水平 */
+        stateLegendEl.style.display = 'none'; /* e.style.display设置DOM可见性 */
+        countyLegendEl.style.display = 'block';
+      } else {
+        stateLegendEl.style.display = 'block';
+        countyLegendEl.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

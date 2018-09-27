@@ -21,3 +21,5 @@
 
 - 1. mapbox 相应配置：https://www.mapbox.com/mapbox-gl-js/style-spec#layers-background
 - 2. 在线生成雪碧图：https://www.toptal.com/developers/css/sprite-generator
+
+浙江数据：'http://116.62.186.152:8080/geoserver/gwc/service/tms/1.0.0/ZheJiang%3AZJDemo@EPSG%3A900913@pbf/{z}/{x}/{y}.pbf'

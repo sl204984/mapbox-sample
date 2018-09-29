@@ -62,23 +62,35 @@ export default function (map) {
           'fill-antialias': false
         }
       })
+
+
       /**
        * 线
        */
       // .addLayer({
-      //   id: 'GHFCLN', // 记录了河流，黄河，隧道等的边界
-      //   type: 'line',
+      //   id: 'SD_GHFCLN', // 记录了河流，黄河，隧道等的边界
+      //   type: 'symbol',
       //   source: CONFIG.addLv15,
       //   'source-layer': 'SD_GHFCLN', // LN，line的简写
-      //   minzoom: 10,
       //   layout: {
-      //     'line-cap': 'round',
-      //     'line-join': 'round'
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
       //   },
       //   paint: {
-      //     'line-width': 1,
-      //     'line-color': '#009797',
-      //     'line-offset': 0
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
       //   }
       // })
       .addLayer({
@@ -132,7 +144,7 @@ export default function (map) {
       //   }
       // })
       // .addLayer({
-      //   id: 'GTFCLN', // 记录了XX桥，XX通道  ==========> 没有 NAME
+      //   id: 'SD_GTFCLN', // 记录了XX桥，XX通道  ==========> 没有 NAME
       //   type: 'symbol',
       //   source: CONFIG.addLv15,
       //   'source-layer': 'SD_GTFCLN', // LN，line的简写
@@ -205,13 +217,32 @@ export default function (map) {
       /**
        * 点
        */
-      // .addLayer({
-      //   id: 'GHFCPT', // 此图层记录了一些水站和XX闸
-      //   type: 'symbol',
-      //   source: CONFIG.addLv15,
-      //   'source-layer': 'SD_GHFCPT',
-      //   layout: {}
-      // })
+      .addLayer({
+        id: 'SD_GHFCPT', // 此图层记录了一些水站和XX闸
+        type: 'symbol',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GHFCPT',
+        layout: {
+          'text-field': '{NAME}',
+          'visibility': 'visible',
+          'symbol-placement': 'point',
+          'text-size': 11,
+          'text-padding': 4,
+          'icon-image': 'btn_bubble_a_normal',
+          'text-justify': 'left',
+          'text-anchor': 'left',
+          'text-offset': [0.5, 0],
+          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport',
+          'icon-rotation-alignment': 'viewport'
+        },
+        paint: {
+          'text-color': '#737517',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
       // .addLayer({
       //   id: 'GHYDPT', // 记录一些井和XX泉  =======> 貌似没有数据 不对，是 NAME 属性为空，但是数据还是有的
       //   type: 'symbol',
@@ -263,7 +294,7 @@ export default function (map) {
         }
       })
       // .addLayer({
-      //   id: 'GRFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等  ======> NAME属性为空
+      //   id: 'SD_GRFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等  ======> NAME属性为空
       //   type: 'symbol',
       //   source: CONFIG.addLv15,
       //   'source-layer': 'SD_GRFCPT',

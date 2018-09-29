@@ -174,7 +174,8 @@ const layers = [{
           [18, 80]
         ]
       },
-      'line-color': '#8E44AD', // 军绿色
+      'line-color': '#8E44AD',
+      // 'fill-antialias': true
     }
   }, {
     id: 'GTFCLN', // 记录了XX桥，XX通道
@@ -266,22 +267,8 @@ const layers = [{
     paint: {
       'text-color': 'white'
     }
-  },
-  // {
-  //   id: 'POI', // POI图层
-  //   type: 'symbol',
-  //   source: 'composite',
-  //   'source-layer': 'DS_POI',
-  //   layout: {
-  //     'text-pitch-alignment': 'viewport',
-  //     'text-size': 12,
-  //     'icon-image': 'btn_bubble_a_normal',
-  //     'symbol-placement': 'point'
-  //   },
-  //   paint: {}
-  // },
-  {
-    id: 'POI_NAME', // POI图层
+  }, {
+    id: '7L_POI', // POI图层
     type: 'symbol',
     source: 'composite',
     'source-layer': 'DS_POI',
@@ -311,25 +298,7 @@ const layers = [{
       'text-halo-width': 2,
       'text-halo-color': 'rgba(255, 255, 255, 1)'
     }
-  },
-
-
-  // {
-  //   id: 'marine-label-lg-ln',
-  //   type: 'symbol',
-  //   source: 'composite',
-  //   'source-layer': 'HYD_PT', // PT，point的简写
-  //   layout: {
-  //     'text-field': '{FNAME}',
-  //     'text-pitch-alignment': 'viewport',
-  //     'text-size': 12
-  //   },
-  //   paint: {
-  //     'text-color': 'black',
-  //     'text-halo-blur': 0,
-  //     'text-halo-color': 'hsla(0, 0%, 10%, 0.75)'
-  //   }
-  // }
+  }
 ];
 
 export default {

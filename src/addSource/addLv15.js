@@ -56,7 +56,7 @@ export default function (map) {
         source: CONFIG.addLv15,
         'source-layer': 'SD_GAGNPT',
         layout: {
-          'text-field': '{name}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 11,
@@ -71,7 +71,7 @@ export default function (map) {
           'icon-rotation-alignment': 'viewport'
         },
         paint: {
-          'text-color': 'rgba(65, 65, 65, 1)',
+          'text-color': '#1E8449',
           'text-halo-width': 2,
           'text-halo-color': 'rgba(255, 255, 255, 1)'
         }

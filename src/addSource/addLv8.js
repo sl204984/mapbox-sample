@@ -2,7 +2,8 @@
  * @author sl 2019-01-02
  * 8级的时候只显示 区级政府机关(190104)，县级政府机关(190105)，省/直辖市/自治区政府(190107)，市县政府(190108)
  * 10级的时候显示所有数据
- * todo 图标没换 icon-image
+ * todolist 
+ * 1. 图标没换 icon-image
  */
 import CONFIG from '../config';
 

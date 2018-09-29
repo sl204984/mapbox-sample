@@ -112,44 +112,11 @@ const layers = [{
       'line-color': '#8E44AD',
       // 'fill-antialias': true
     }
-  }, {
-    id: 'GTFCLN', // 记录了XX桥，XX通道
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GTFCLN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        'base': 1.5,
-        'stops': [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': '#009797', // 军绿色
-    }
   },
   /**
    * 点
    */
   {
-    id: 'GTFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GTFCPT',
-    layout: {
-      'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'amusement-park-11',
-      'symbol-placement': 'point'
-    },
-    paint: {
-      'text-color': 'white'
-    }
-  }, {
     id: '7L_POI', // POI图层
     type: 'symbol',
     source: 'composite',

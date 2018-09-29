@@ -131,6 +131,34 @@ export default function (map) {
       //     'text-halo-color': 'rgba(255, 255, 255, 1)'
       //   }
       // })
+      // .addLayer({
+      //   id: 'GTFCLN', // 记录了XX桥，XX通道  ==========> 没有 NAME
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GTFCLN', // LN，line的简写
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
+      // })
+
+
       /**
        * 点
        */
@@ -217,6 +245,32 @@ export default function (map) {
       //     'text-halo-color': 'rgba(255, 255, 255, 1)'
       //   }
       // })
+      // .addLayer({
+      //   id: 'GTFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等   =======> 没有名称属性 NAME
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GTFCPT',
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
+      // })
       .addLayer({
         id: 'SD_GAGNPT', // 此图层记录了村庄POI
         type: 'symbol',
@@ -239,6 +293,32 @@ export default function (map) {
         },
         paint: {
           'text-color': '#737517',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
+      .addLayer({
+        id: 'OTH_POI',
+        type: 'symbol',
+        source: CONFIG.addLv15,
+        'source-layer': 'OTH_POI', // py是面
+        'layout': {
+          'text-field': '{newname}',
+          'visibility': 'visible',
+          'symbol-placement': 'point',
+          'text-size': 11,
+          'text-padding': 4,
+          // 'icon-image': 'btn_bubble_a_normal',
+          'text-justify': 'left',
+          'text-anchor': 'left',
+          'text-offset': [0.5, 0],
+          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport',
+          'icon-rotation-alignment': 'viewport'
+        },
+        'paint': {
+          'text-color': 'rgba(65, 65, 65, 1)',
           'text-halo-width': 2,
           'text-halo-color': 'rgba(255, 255, 255, 1)'
         }

@@ -28,6 +28,32 @@ export default function (map) {
         }
       })
       .addLayer({
+        id: 'GRESPL_1_3D', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GRESPL_1', // py是面
+        type: 'fill-extrusion',
+        'minzoom': _visibleLevel,
+        paint: {
+          'fill-extrusion-color': '#aaa',
+
+          // use an 'interpolate' expression to add a smooth transition effect to the
+          // buildings as the user zooms in
+          'fill-extrusion-height': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "height"]
+          ],
+          'fill-extrusion-base': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "min_height"]
+          ],
+
+        }
+      })
+      .addLayer({
         id: 'GRESPL_2', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
         type: 'fill',
         source: CONFIG.addLv15,
@@ -397,5 +423,37 @@ export default function (map) {
           'text-halo-color': 'rgba(255, 255, 255, 1)'
         }
       });
+
+    var layers = map.getStyle().layers;
+
+    var labelLayerId;
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+        labelLayerId = layers[i].id;
+        break;
+      }
+    }
+    map.addLayer({
+      'id': '3d-buildings',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_1',
+      // 'filter': ['==', 'extrude', 'true'],
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+
+        // use an 'interpolate' expression to add a smooth transition effect to the
+        // buildings as the user zooms in
+        'fill-extrusion-height': 30,
+        'fill-extrusion-base': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ["get", "min_height"]
+        ],
+        'fill-extrusion-opacity': .6
+      }
+    }, labelLayerId);
   }
 }

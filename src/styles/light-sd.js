@@ -33,17 +33,6 @@ const layers = [{
       'fill-antialias': false
     }
   }, {
-    id: 'GRFCPL', // 记录了一些公司，养殖场，墓地等区域
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GRFCPL', // py是面
-    minzoom: 12,
-    layout: {},
-    paint: {
-      'fill-color': '#F5B7B1',
-      'fill-antialias': false
-    }
-  }, {
     id: 'GVEGPL', // 记录了绿地
     type: 'fill',
     source: 'composite',
@@ -104,25 +93,6 @@ const layers = [{
       'line-width': 1.6
     }
   }, {
-    id: 'GRFCLN', // 记录了长城岭，养殖场等
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GRFCLN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        'base': 1.5,
-        'stops': [
-          [9, 2],
-          [18, 4]
-        ]
-      },
-      'line-color': 'rgba(253, 122, 0, 0.5)'
-    }
-  }, {
     id: 'GROALN', // 路网图层（name字段）
     type: 'line',
     source: 'composite',
@@ -166,48 +136,6 @@ const layers = [{
    * 点
    */
   {
-    id: 'GHYDPT', // 记录一些井和XX泉
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GHYDPT',
-    layout: {
-      'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'alcohol-shop-11',
-      'symbol-placement': 'point'
-    },
-    paint: {
-      'text-color': 'white'
-    }
-  }, {
-    id: 'GNPNPT', // 记录了XX山和水库
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GNPNPT',
-    layout: {
-      'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'amusement-park-11',
-      'symbol-placement': 'point'
-    },
-    paint: {
-      'text-color': 'white'
-    }
-  }, {
-    id: 'GRFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GRFCPT',
-    layout: {
-      'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'amusement-park-11',
-      'symbol-placement': 'point'
-    },
-    paint: {
-      'text-color': 'white'
-    }
-  }, {
     id: 'GTFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等
     type: 'symbol',
     source: 'composite',

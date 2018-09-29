@@ -3,7 +3,7 @@
  */
 import CONFIG from '../config';
 
-const _visibleLevel = 15;
+const _visibleLevel = 12;
 
 export default function (map) {
   if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv15)) {
@@ -14,7 +14,8 @@ export default function (map) {
           'http://116.62.186.152:8080/geoserver/gwc/service/tms/1.0.0/SDWorkSpace%3ASDLayers@EPSG%3A900913@pbf/{z}/{x}/{y}.pbf'
         ],
         minzoom: _visibleLevel
-      }).addLayer({
+      })
+      .addLayer({
         id: 'GRESPL_1', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
         type: 'fill',
         source: CONFIG.addLv15,
@@ -25,7 +26,8 @@ export default function (map) {
           'fill-opacity': 1,
           'fill-antialias': false
         }
-      }).addLayer({
+      })
+      .addLayer({
         id: 'GRESPL_2', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
         type: 'fill',
         source: CONFIG.addLv15,
@@ -36,7 +38,8 @@ export default function (map) {
           'fill-opacity': 1,
           'fill-antialias': false
         }
-      }).addLayer({
+      })
+      .addLayer({
         id: 'GRESPL_3', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
         type: 'fill',
         source: CONFIG.addLv15,
@@ -45,6 +48,17 @@ export default function (map) {
         paint: {
           'fill-color': '#CACFD2',
           'fill-opacity': 1,
+          'fill-antialias': false
+        }
+      })
+      .addLayer({
+        id: 'GRFCPL', // 记录了一些公司，养殖场，墓地等区域
+        type: 'fill',
+        source: 'composite',
+        'source-layer': 'SD_GRFCPL', // py是面
+        layout: {},
+        paint: {
+          'fill-color': '#CACFD2',
           'fill-antialias': false
         }
       })
@@ -86,11 +100,37 @@ export default function (map) {
           'text-rotation-alignment': 'viewport',
         },
         paint: {
-          'text-color': '#409FD8',
+          'text-color': '#2E7EAF',
           'text-halo-width': 2,
           'text-halo-color': 'rgba(255, 255, 255, 1)'
         }
       })
+      // .addLayer({
+      //   id: 'SD_GRFCLN', // 记录了长城岭，养殖场等 =====>  NAME 属性为空，暂时注释了
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GRFCLN', // LN，line的简写
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
+      // })
       /**
        * 点
        */
@@ -100,6 +140,82 @@ export default function (map) {
       //   source: 'composite',
       //   'source-layer': 'SD_GHFCPT',
       //   layout: {}
+      // })
+      // .addLayer({
+      //   id: 'GHYDPT', // 记录一些井和XX泉  =======> 貌似没有数据 不对，是 NAME 属性为空，但是数据还是有的
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GHYDPT',
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
+      // })
+      .addLayer({
+        id: 'GNPNPT', // 记录了XX山和水库
+        type: 'symbol',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GNPNPT',
+        layout: {
+          'text-field': '{NAME}',
+          'visibility': 'visible',
+          'symbol-placement': 'point',
+          'text-size': 11,
+          'text-padding': 4,
+          'text-justify': 'left',
+          'text-anchor': 'left',
+          'text-offset': [0.5, 0],
+          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport'
+        },
+        paint: {
+          'text-color': '#409FD8',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
+      // .addLayer({
+      //   id: 'GRFCPT', // 记录了一些学校，自来水厂，服务站，输油站，液化气站，遗址，陵墓，寺庙，游乐场等  ======> NAME属性为空
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GRFCPT',
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
       // })
       .addLayer({
         id: 'SD_GAGNPT', // 此图层记录了村庄POI

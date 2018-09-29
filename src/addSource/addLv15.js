@@ -67,9 +67,40 @@ export default function (map) {
       //     'line-offset': 0
       //   }
       // })
+      .addLayer({
+        id: 'SD_GHYDLN', // 记录了一些线性的水渠、河沟 不显示  ======> 不显示是不是不妥
+        type: 'symbol',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GHYDLN', // LN，line的简写
+        layout: {
+          'text-field': '{NAME}',
+          'visibility': 'visible',
+          'symbol-placement': 'point',
+          'text-size': 11,
+          'text-padding': 4,
+          'text-justify': 'left',
+          'text-anchor': 'left',
+          'text-offset': [0.5, 0],
+          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport',
+        },
+        paint: {
+          'text-color': '#409FD8',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
       /**
        * 点
        */
+      // .addLayer({
+      //   id: 'GHFCPT', // 此图层记录了一些水站和XX闸
+      //   type: 'symbol',
+      //   source: 'composite',
+      //   'source-layer': 'SD_GHFCPT',
+      //   layout: {}
+      // })
       .addLayer({
         id: 'SD_GAGNPT', // 此图层记录了村庄POI
         type: 'symbol',
@@ -91,7 +122,7 @@ export default function (map) {
           'icon-rotation-alignment': 'viewport'
         },
         paint: {
-          'text-color': '#1E8449',
+          'text-color': '#737517',
           'text-halo-width': 2,
           'text-halo-color': 'rgba(255, 255, 255, 1)'
         }

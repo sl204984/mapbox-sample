@@ -15,7 +15,7 @@ export default function (map) {
       ],
       minzoom: _visibleLevel
     }).addLayer({
-      id: '11L_POI', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
+      id: '11L_POI',
       type: 'symbol',
       source: CONFIG.addLv11,
       'source-layer': '11L_POI', // py是面

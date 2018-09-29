@@ -74,26 +74,6 @@ const layers = [{
       'line-offset': 0
     }
   }, {
-    id: 'GHYDLN', // 记录了一些线性的水渠、河沟 不显示
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GHYDLN', // LN，line的简写
-    minzoom: 10,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        'base': 1.5,
-        'stops': [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': '#85C1E9',
-    }
-  }, {
     id: 'GRAILN_bottom', // 记录了铁路，底层颜色灰色
     type: 'line',
     source: 'composite',
@@ -186,17 +166,6 @@ const layers = [{
    * 点
    */
   {
-    id: 'GHFCPT', // 此图层记录了一些水站和XX闸
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GHFCPT',
-    layout: {
-      'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'airport-15',
-      'symbol-placement': 'point'
-    },
-  }, {
     id: 'GHYDPT', // 记录一些井和XX泉
     type: 'symbol',
     source: 'composite',

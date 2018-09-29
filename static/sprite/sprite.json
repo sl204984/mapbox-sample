@@ -42,7 +42,7 @@
   "btn_dialog_cancel_focused.9": {
     "width": 18,
     "height": 18,
-    "x": 357,
+    "x": 311,
     "y": 276,
     "pixelRatio": 2,
     "visible": true
@@ -50,20 +50,12 @@
   "btn_dialog_cancel_normal.9": {
     "width": 18,
     "height": 18,
-    "x": 46,
-    "y": 536,
+    "x": 334,
+    "y": 276,
     "pixelRatio": 2,
     "visible": true
   },
   "btn_dialog_confirm_focused.9": {
-    "width": 18,
-    "height": 18,
-    "x": 23,
-    "y": 536,
-    "pixelRatio": 2,
-    "visible": true
-  },
-  "btn_dialog_confirm_normal.9": {
     "width": 18,
     "height": 18,
     "x": 0,
@@ -71,11 +63,19 @@
     "pixelRatio": 2,
     "visible": true
   },
+  "btn_dialog_confirm_normal.9": {
+    "width": 18,
+    "height": 18,
+    "x": 46,
+    "y": 536,
+    "pixelRatio": 2,
+    "visible": true
+  },
   "btn_zoomin_focused.9": {
     "width": 18,
     "height": 18,
-    "x": 380,
-    "y": 276,
+    "x": 23,
+    "y": 536,
     "pixelRatio": 2,
     "visible": true
   },
@@ -90,7 +90,7 @@
   "btn_zoomout_focused.9": {
     "width": 18,
     "height": 18,
-    "x": 311,
+    "x": 380,
     "y": 276,
     "pixelRatio": 2,
     "visible": true
@@ -98,7 +98,7 @@
   "btn_zoomout_normal.9": {
     "width": 18,
     "height": 18,
-    "x": 334,
+    "x": 357,
     "y": 276,
     "pixelRatio": 2,
     "visible": true
@@ -115,7 +115,7 @@
     "width": 32,
     "height": 32,
     "x": 481,
-    "y": 148,
+    "y": 185,
     "pixelRatio": 2,
     "visible": true
   },
@@ -123,7 +123,7 @@
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 333,
+    "y": 370,
     "pixelRatio": 2,
     "visible": true
   },
@@ -139,7 +139,7 @@
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 185,
+    "y": 222,
     "pixelRatio": 2,
     "visible": true
   },
@@ -154,7 +154,7 @@
   "ic_map_bar": {
     "width": 32,
     "height": 32,
-    "x": 333,
+    "x": 370,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -170,7 +170,7 @@
   "ic_map_boc": {
     "width": 32,
     "height": 32,
-    "x": 444,
+    "x": 481,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -179,7 +179,7 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 37,
+    "y": 74,
     "pixelRatio": 2,
     "visible": true
   },
@@ -219,7 +219,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 261,
+    "y": 29,
     "pixelRatio": 2,
     "visible": true
   },
@@ -370,7 +370,7 @@
   "ic_map_government1": {
     "width": 27,
     "height": 27,
-    "x": 293,
+    "x": 261,
     "y": 353,
     "pixelRatio": 2,
     "visible": true
@@ -399,11 +399,19 @@
     "pixelRatio": 2,
     "visible": true
   },
+  "ic_map_guodao_bg": {
+    "width": 1,
+    "height": 1,
+    "x": 561,
+    "y": 518,
+    "pixelRatio": 2,
+    "visible": true
+  },
   "ic_map_hi_tech_park": {
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 148,
+    "y": 185,
     "pixelRatio": 2,
     "visible": true
   },
@@ -427,7 +435,7 @@
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 259,
+    "y": 296,
     "pixelRatio": 2,
     "visible": true
   },
@@ -435,7 +443,7 @@
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 296,
+    "y": 333,
     "pixelRatio": 2,
     "visible": true
   },
@@ -450,20 +458,12 @@
   "ic_map_huochezhan": {
     "width": 32,
     "height": 32,
-    "x": 444,
-    "y": 370,
-    "pixelRatio": 2,
-    "visible": true
-  },
-  "ic_map_icbc": {
-    "width": 32,
-    "height": 32,
     "x": 0,
     "y": 425,
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jianshe": {
+  "ic_map_icbc": {
     "width": 32,
     "height": 32,
     "x": 37,
@@ -471,7 +471,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jiaotong": {
+  "ic_map_jianshe": {
     "width": 32,
     "height": 32,
     "x": 74,
@@ -479,7 +479,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jiayouzhan": {
+  "ic_map_jiaotong": {
     "width": 32,
     "height": 32,
     "x": 111,
@@ -487,7 +487,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jichang": {
+  "ic_map_jiayouzhan": {
     "width": 32,
     "height": 32,
     "x": 148,
@@ -495,7 +495,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jiuba": {
+  "ic_map_jichang": {
     "width": 32,
     "height": 32,
     "x": 185,
@@ -503,7 +503,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_jiudian": {
+  "ic_map_jiuba": {
     "width": 32,
     "height": 32,
     "x": 222,
@@ -511,7 +511,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_kfc": {
+  "ic_map_jiudian": {
     "width": 32,
     "height": 32,
     "x": 259,
@@ -519,7 +519,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_ktv": {
+  "ic_map_kfc": {
     "width": 32,
     "height": 32,
     "x": 296,
@@ -527,7 +527,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_library": {
+  "ic_map_ktv": {
     "width": 32,
     "height": 32,
     "x": 333,
@@ -535,7 +535,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_lvdian": {
+  "ic_map_library": {
     "width": 32,
     "height": 32,
     "x": 370,
@@ -543,7 +543,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_macdonal": {
+  "ic_map_lvdian": {
     "width": 32,
     "height": 32,
     "x": 407,
@@ -551,7 +551,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_market": {
+  "ic_map_macdonal": {
     "width": 32,
     "height": 32,
     "x": 444,
@@ -559,7 +559,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_minsheng": {
+  "ic_map_market": {
     "width": 32,
     "height": 32,
     "x": 481,
@@ -567,7 +567,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_mobile": {
+  "ic_map_minsheng": {
     "width": 32,
     "height": 32,
     "x": 481,
@@ -575,7 +575,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_museum": {
+  "ic_map_mobile": {
     "width": 32,
     "height": 32,
     "x": 481,
@@ -583,11 +583,19 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_nongye": {
+  "ic_map_museum": {
     "width": 32,
     "height": 32,
     "x": 481,
     "y": 111,
+    "pixelRatio": 2,
+    "visible": true
+  },
+  "ic_map_nongye": {
+    "width": 32,
+    "height": 32,
+    "x": 481,
+    "y": 148,
     "pixelRatio": 2,
     "visible": true
   },
@@ -603,7 +611,7 @@
     "width": 32,
     "height": 32,
     "x": 481,
-    "y": 185,
+    "y": 222,
     "pixelRatio": 2,
     "visible": true
   },
@@ -627,7 +635,7 @@
     "width": 32,
     "height": 32,
     "x": 481,
-    "y": 296,
+    "y": 333,
     "pixelRatio": 2,
     "visible": true
   },
@@ -635,7 +643,7 @@
     "width": 32,
     "height": 32,
     "x": 481,
-    "y": 333,
+    "y": 370,
     "pixelRatio": 2,
     "visible": true
   },
@@ -643,15 +651,15 @@
     "width": 32,
     "height": 32,
     "x": 481,
-    "y": 370,
+    "y": 407,
     "pixelRatio": 2,
     "visible": true
   },
   "ic_map_others_fun": {
     "width": 32,
     "height": 32,
-    "x": 481,
-    "y": 407,
+    "x": 0,
+    "y": 462,
     "pixelRatio": 2,
     "visible": true
   },
@@ -666,7 +674,7 @@
   "ic_map_others_shopping": {
     "width": 32,
     "height": 32,
-    "x": 37,
+    "x": 74,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -674,7 +682,7 @@
   "ic_map_others_tour": {
     "width": 32,
     "height": 32,
-    "x": 74,
+    "x": 111,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -682,7 +690,7 @@
   "ic_map_others_transportation": {
     "width": 32,
     "height": 32,
-    "x": 111,
+    "x": 148,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -690,7 +698,7 @@
   "ic_map_park": {
     "width": 32,
     "height": 32,
-    "x": 148,
+    "x": 185,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -698,7 +706,7 @@
   "ic_map_parking": {
     "width": 32,
     "height": 32,
-    "x": 185,
+    "x": 222,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -706,7 +714,7 @@
   "ic_map_port": {
     "width": 32,
     "height": 32,
-    "x": 222,
+    "x": 259,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -714,7 +722,7 @@
   "ic_map_provincial_capital": {
     "width": 27,
     "height": 27,
-    "x": 261,
+    "x": 293,
     "y": 353,
     "pixelRatio": 2,
     "visible": true
@@ -722,7 +730,7 @@
   "ic_map_pufa": {
     "width": 32,
     "height": 32,
-    "x": 296,
+    "x": 333,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -771,7 +779,7 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 0,
+    "y": 37,
     "pixelRatio": 2,
     "visible": true
   },
@@ -787,7 +795,7 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 74,
+    "y": 111,
     "pixelRatio": 2,
     "visible": true
   },
@@ -795,7 +803,7 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 111,
+    "y": 148,
     "pixelRatio": 2,
     "visible": true
   },
@@ -803,7 +811,7 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 148,
+    "y": 185,
     "pixelRatio": 2,
     "visible": true
   },
@@ -850,8 +858,8 @@
   "ic_map_subway_chongqing": {
     "width": 24,
     "height": 24,
-    "x": 357,
-    "y": 353,
+    "x": 555,
+    "y": 87,
     "pixelRatio": 2,
     "visible": true
   },
@@ -859,7 +867,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 58,
+    "y": 435,
     "pixelRatio": 2,
     "visible": true
   },
@@ -890,8 +898,8 @@
   "ic_map_subway_hangzhou": {
     "width": 24,
     "height": 24,
-    "x": 467,
-    "y": 499,
+    "x": 555,
+    "y": 261,
     "pixelRatio": 2,
     "visible": true
   },
@@ -899,7 +907,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 435,
+    "y": 58,
     "pixelRatio": 2,
     "visible": true
   },
@@ -907,7 +915,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 29,
+    "y": 0,
     "pixelRatio": 2,
     "visible": true
   },
@@ -915,7 +923,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 319,
+    "y": 232,
     "pixelRatio": 2,
     "visible": true
   },
@@ -931,7 +939,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 0,
+    "y": 290,
     "pixelRatio": 2,
     "visible": true
   },
@@ -939,7 +947,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 87,
+    "y": 319,
     "pixelRatio": 2,
     "visible": true
   },
@@ -947,7 +955,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 232,
+    "y": 348,
     "pixelRatio": 2,
     "visible": true
   },
@@ -955,7 +963,7 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 290,
+    "y": 377,
     "pixelRatio": 2,
     "visible": true
   },
@@ -963,27 +971,19 @@
     "width": 24,
     "height": 24,
     "x": 555,
-    "y": 348,
+    "y": 406,
     "pixelRatio": 2,
     "visible": true
   },
   "ic_map_subway_switch_changsha": {
     "width": 24,
     "height": 24,
-    "x": 555,
-    "y": 377,
+    "x": 357,
+    "y": 353,
     "pixelRatio": 2,
     "visible": true
   },
   "ic_map_subway_switch_dalian": {
-    "width": 24,
-    "height": 24,
-    "x": 555,
-    "y": 406,
-    "pixelRatio": 2,
-    "visible": true
-  },
-  "ic_map_subway_switch_hefeichengdu": {
     "width": 24,
     "height": 24,
     "x": 148,
@@ -991,7 +991,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_switch_red": {
+  "ic_map_subway_switch_hefeichengdu": {
     "width": 24,
     "height": 24,
     "x": 177,
@@ -999,7 +999,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_switch_shenzhenkunmingchongqing": {
+  "ic_map_subway_switch_red": {
     "width": 24,
     "height": 24,
     "x": 206,
@@ -1007,7 +1007,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_switch_suzhou": {
+  "ic_map_subway_switch_shenzhenkunmingchongqing": {
     "width": 24,
     "height": 24,
     "x": 235,
@@ -1015,7 +1015,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_switch_wuhan": {
+  "ic_map_subway_switch_suzhou": {
     "width": 24,
     "height": 24,
     "x": 264,
@@ -1023,7 +1023,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_switch_zhengzhou": {
+  "ic_map_subway_switch_wuhan": {
     "width": 24,
     "height": 24,
     "x": 293,
@@ -1031,7 +1031,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_tianjin": {
+  "ic_map_subway_switch_zhengzhou": {
     "width": 24,
     "height": 24,
     "x": 322,
@@ -1039,7 +1039,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_wuhan": {
+  "ic_map_subway_tianjin": {
     "width": 24,
     "height": 24,
     "x": 351,
@@ -1047,7 +1047,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_wuxi": {
+  "ic_map_subway_wuhan": {
     "width": 24,
     "height": 24,
     "x": 380,
@@ -1055,7 +1055,7 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_xian": {
+  "ic_map_subway_wuxi": {
     "width": 24,
     "height": 24,
     "x": 409,
@@ -1063,10 +1063,18 @@
     "pixelRatio": 2,
     "visible": true
   },
-  "ic_map_subway_zhengzhou": {
+  "ic_map_subway_xian": {
     "width": 24,
     "height": 24,
     "x": 438,
+    "y": 499,
+    "pixelRatio": 2,
+    "visible": true
+  },
+  "ic_map_subway_zhengzhou": {
+    "width": 24,
+    "height": 24,
+    "x": 467,
     "y": 499,
     "pixelRatio": 2,
     "visible": true
@@ -1163,14 +1171,14 @@
     "width": 32,
     "height": 32,
     "x": 518,
-    "y": 185,
+    "y": 0,
     "pixelRatio": 2,
     "visible": true
   },
   "ic_map_xingye": {
     "width": 32,
     "height": 32,
-    "x": 481,
+    "x": 444,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -1186,7 +1194,7 @@
   "ic_map_yaodian": {
     "width": 32,
     "height": 32,
-    "x": 370,
+    "x": 296,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -1194,7 +1202,7 @@
   "ic_map_yinyueting": {
     "width": 32,
     "height": 32,
-    "x": 259,
+    "x": 37,
     "y": 462,
     "pixelRatio": 2,
     "visible": true
@@ -1202,8 +1210,8 @@
   "ic_map_yiyuan": {
     "width": 32,
     "height": 32,
-    "x": 0,
-    "y": 462,
+    "x": 481,
+    "y": 296,
     "pixelRatio": 2,
     "visible": true
   },
@@ -1218,8 +1226,8 @@
   "ic_map_youlechang": {
     "width": 32,
     "height": 32,
-    "x": 481,
-    "y": 222,
+    "x": 444,
+    "y": 259,
     "pixelRatio": 2,
     "visible": true
   },
@@ -1227,7 +1235,7 @@
     "width": 32,
     "height": 32,
     "x": 444,
-    "y": 222,
+    "y": 148,
     "pixelRatio": 2,
     "visible": true
   },
@@ -1244,6 +1252,14 @@
     "height": 32,
     "x": 407,
     "y": 296,
+    "pixelRatio": 2,
+    "visible": true
+  },
+  "ic_map_zhengfu_bg": {
+    "width": 1,
+    "height": 1,
+    "x": 555,
+    "y": 518,
     "pixelRatio": 2,
     "visible": true
   },

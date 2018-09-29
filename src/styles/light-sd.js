@@ -1,9 +1,13 @@
 /**
  * @author sl
  * 更换服务器：style.sources.tiles[0] 更换内容
+ * 以山东省数据为例
+ * host:port/geoserver/gwc/service/tms/1.0.0/SDWorkSpace%3ASD_7L@EPSG%3A900913@pbf/{z}/{x}/{y}.pbf
  * 1. ip + host
- * 2. TeacherLang ---> 对应的空间名称
- * 3. 3AZJDemoLayers ----> 对应的图层名称
+ * 2. SDWorkSpace ---> 对应的空间名称
+ * 3. 3ASD_7L ----> 对应的图层名称
+ * 4. z ----> 缩放等级
+ * 5. x, y ----> 对应的瓦片
  */
 
 const layers = [{
@@ -11,24 +15,191 @@ const layers = [{
     type: 'background',
     layout: {},
     paint: {
-      'background-color': 'white'
+      'background-color': 'hsl(55, 11%, 96%)'
+    }
+  },
+  /**
+   * 面
+   */
+  {
+    id: 'GHYDPL', // 记录了一些水渠、河沟，水库的面状要素
+    type: 'fill',
+    source: 'composite',
+    'source-layer': 'SD_GHYDPL', // py是面
+    layout: {},
+    paint: {
+      'fill-color': '#85C1E9',
+      'fill-opacity': 1,
+      'fill-antialias': false
+    }
+  }, {
+    id: 'GRFCPL', // 记录了一些公司，养殖场，墓地等区域
+    type: 'fill',
+    source: 'composite',
+    'source-layer': 'SD_GRFCPL', // py是面
+    minzoom: 12,
+    layout: {},
+    paint: {
+      'fill-color': '#F5B7B1',
+      'fill-antialias': false
+    }
+  }, {
+    id: 'GVEGPL', // 记录了绿地
+    type: 'fill',
+    source: 'composite',
+    'source-layer': 'SD_GVEGPL', // py是面
+    layout: {},
+    paint: {
+      'fill-color': '#58D68D',
+      'fill-opacity': 0.5,
+      'fill-antialias': false
+    }
+  },
+  /**
+   * 线
+   */
+  {
+    id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GBOULN', // LN，line的简写
+    // minzoom: 10,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-width': 1,
+      'line-color': 'rgba(180, 180, 180, 1)',
+      'line-offset': 0
+    }
+  },
+  {
+    id: 'GHFCLN', // 记录了河流，黄河，隧道等的边界
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GHFCLN', // LN，line的简写
+    minzoom: 10,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+
+    },
+    paint: {
+
+    }
+  }, {
+    id: 'GHYDLN', // 记录了一些线性的水渠、河沟 不显示
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GHYDLN', // LN，line的简写
+    minzoom: 10,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-width': {
+        'base': 1.5,
+        'stops': [
+          [9, 1],
+          [18, 80]
+        ]
+      },
+      'line-color': '#85C1E9',
+    }
+  }, {
+    id: 'GRAILN_bottom', // 记录了铁路，底层颜色灰色
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GRAILN', // LN，line的简写
+    minzoom: 8,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+    },
+    paint: {
+      'line-color': '#B6B3B7',
+      'line-width': 2.4
+    }
+  }, {
+    id: 'GRAILN', // 记录了铁路，间隔白色
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GRAILN', // LN，line的简写
+    minzoom: 8,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-color': '#FFFFFF',
+      'line-dasharray': [5, 5],
+      // 'line-gap-width': 0.1,
+      'line-width': 1.6
+    }
+  }, {
+    id: 'GRFCLN', // 记录了长城岭，养殖场等
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GRFCLN', // LN，line的简写
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-width': {
+        'base': 1.5,
+        'stops': [
+          [9, 2],
+          [18, 4]
+        ]
+      },
+      'line-color': 'rgba(253, 122, 0, 0.5)'
+    }
+  }, {
+    id: 'GROALN', // 路网图层（name字段）
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'GS_GROALN', // LN，line的简写
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+    },
+    paint: {
+      'line-width': {
+        'base': 1.5,
+        'stops': [
+          [9, 1],
+          [18, 80]
+        ]
+      },
+      'line-color': '#8E44AD', // 军绿色
+    }
+  }, {
+    id: 'GTFCLN', // 记录了XX桥，XX通道
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GTFCLN', // LN，line的简写
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-width': {
+        'base': 1.5,
+        'stops': [
+          [9, 1],
+          [18, 80]
+        ]
+      },
+      'line-color': '#009797', // 军绿色
     }
   },
   /**
    * 点
    */
   {
-    id: 'GAGNPT', // 此图层记录了村庄POI
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'SD_GAGNPT',
-    "paint": {
-      "text-color": "#ffff00",
-      "text-halo-color": "#ff0",
-      "text-halo-width": 1,
-      "text-halo-blur": 0
-    }
-  }, {
     id: 'GHFCPT', // 此图层记录了一些水站和XX闸
     type: 'symbol',
     source: 'composite',
@@ -95,203 +266,53 @@ const layers = [{
     paint: {
       'text-color': 'white'
     }
-  }, {
-    id: 'POI', // POI图层
+  },
+  // {
+  //   id: 'POI', // POI图层
+  //   type: 'symbol',
+  //   source: 'composite',
+  //   'source-layer': 'DS_POI',
+  //   layout: {
+  //     'text-pitch-alignment': 'viewport',
+  //     'text-size': 12,
+  //     'icon-image': 'btn_bubble_a_normal',
+  //     'symbol-placement': 'point'
+  //   },
+  //   paint: {}
+  // },
+  {
+    id: 'POI_NAME', // POI图层
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'SD_POI',
-    layout: {
+    'source-layer': 'DS_POI',
+    minzoom: 7,
+    'layout': {
+      'text-field': {
+        'stops': [
+          [7, '{newname}'],
+          [14, '{newname}人民政府']
+        ]
+      },
+      'visibility': 'visible',
+      'symbol-placement': 'point',
+      'text-size': 16,
+      'text-padding': 4,
+      'icon-image': 'ic_map_zhengfu',
+      'text-justify': 'left',
+      'text-anchor': 'left',
+      'text-offset': [0.5, 0],
+      'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
       'text-pitch-alignment': 'viewport',
-      'text-size': 12,
-      'icon-image': 'amusement-park-11',
-      'symbol-placement': 'point'
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport'
     },
-    paint: {
-      'text-color': 'white'
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
     }
   },
-  /**
-   * 线
-   */
-  // {
-  //   id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
-  //   type: 'line',
-  //   source: 'composite',
-  //   'source-layer': 'SD_GBOULN', // LN，line的简写
-  //   // minzoom: 10,
-  //   layout: {
-  //     'line-cap': 'round',
-  //     'line-join': 'round'
-  //   },
-  //   paint: {
-  //     "line-width": 1,
-  //     "line-color": "rgba(180, 180, 180, 1)",
-  //     "line-offset": 0
-  //   }
-  // }, 
-  {
-    id: 'GHFCLN', // 记录了河流，黄河，隧道等的边界
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GHFCLN', // LN，line的简写
-    minzoom: 10,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
 
-    },
-    paint: {
-      'line-width': 1,
-      'line-color': '#A6ACAF',
-    }
-  }, {
-    id: 'GHYDLN', // 记录了一些线性的水渠、河沟 不显示
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GHYDLN', // LN，line的简写
-    minzoom: 10,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        "base": 1.5,
-        "stops": [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': '#85C1E9',
-    }
-  }, {
-    id: 'GRAILN', // 记录了铁路
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GRAILN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        "base": 1.5,
-        "stops": [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': 'black',
-    }
-  }, {
-    id: 'GRFCLN', // 记录了长城岭，养殖场等
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GRFCLN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': {
-        "base": 1.5,
-        "stops": [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': 'rgba(253, 122, 0, 0.5)'
-    }
-  }, {
-    id: 'GROALN', // 路网图层（name字段）
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GROALN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-
-    },
-    paint: {
-      'line-width': {
-        "base": 1.5,
-        "stops": [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': '#009797', // 军绿色
-    }
-  }, {
-    id: 'GTFCLN', // 记录了XX桥，XX通道
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GTFCLN', // LN，line的简写
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-
-    },
-    paint: {
-      'line-width': {
-        "base": 1.5,
-        "stops": [
-          [9, 1],
-          [18, 80]
-        ]
-      },
-      'line-color': '#009797', // 军绿色
-    }
-  },
-  /**
-   * 面
-   */
-  {
-    id: 'GHYDPL', // 记录了一些水渠、河沟，水库的面状要素
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GHYDPL', // py是面
-    layout: {},
-    paint: {
-      'fill-color': '#85C1E9',
-      'fill-opacity': 1,
-      'fill-antialias': false
-    }
-  }, {
-    id: 'GRESPL', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GRESPL', // py是面
-    layout: {},
-    paint: {
-      'fill-color': '#ff0080',
-      'fill-opacity': 0.1,
-      'fill-antialias': false
-    }
-  }, {
-    id: 'GRFCPL', // 记录了一些公司，养殖场，墓地等区域
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GRFCPL', // py是面
-    minzoom: 12,
-    layout: {},
-    paint: {
-      'fill-color': '#F5B7B1',
-      'fill-antialias': false
-    }
-  }, {
-    id: 'GVEGPL', // 记录了绿地
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GVEGPL', // py是面
-    // minzoom: 8,
-    layout: {},
-    paint: {
-      'fill-color': '#58D68D',
-      'fill-opacity': 0.5,
-      'fill-antialias': false
-    }
-  },
 
   // {
   //   id: 'marine-label-lg-ln',
@@ -325,7 +346,7 @@ export default {
     }
   },
   sprite: 'http://116.62.186.152:12808/sprite/sprite',
-  glyphs: 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf',
+  glyphs: 'http://47.97.24.100:8899/fonts/{fontstack}/{range}.pbf',
   visibility: 'public',
   layers
 };

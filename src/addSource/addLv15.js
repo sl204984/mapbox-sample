@@ -3,7 +3,7 @@
  */
 import CONFIG from '../config';
 
-const _visibleLevel = 12;
+const _visibleLevel = 15;
 
 export default function (map) {
   if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv15)) {
@@ -157,7 +157,50 @@ export default function (map) {
       //     'text-halo-color': 'rgba(255, 255, 255, 1)'
       //   }
       // })
-
+      .addLayer({
+        id: 'SD_GROALN', // 路网图层（name字段）
+        type: 'line',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GROALN', // LN，line的简写
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 1.5,
+            'stops': [
+              [9, 2],
+              [18, 4]
+            ]
+          },
+          'line-color': '#fECE70',
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_NAME', // 记录了一些线性的水渠、河沟 不显示  ======> 不显示是不是不妥
+        type: 'symbol',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GROALN', // LN，line的简写
+        layout: {
+          'text-field': '{NAME}',
+          'visibility': 'visible',
+          'symbol-placement': 'point',
+          'text-size': 11,
+          'text-padding': 4,
+          'text-justify': 'left',
+          'text-anchor': 'left',
+          'text-offset': [0.5, 0],
+          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'text-pitch-alignment': 'viewport',
+          'text-rotation-alignment': 'viewport',
+        },
+        paint: {
+          'text-color': '#2E7EAF',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
 
       /**
        * 点
@@ -165,7 +208,7 @@ export default function (map) {
       // .addLayer({
       //   id: 'GHFCPT', // 此图层记录了一些水站和XX闸
       //   type: 'symbol',
-      //   source: 'composite',
+      //   source: CONFIG.addLv15,
       //   'source-layer': 'SD_GHFCPT',
       //   layout: {}
       // })

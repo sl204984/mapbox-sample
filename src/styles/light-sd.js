@@ -93,10 +93,11 @@ const layers = [{
       'line-width': 1.6
     }
   }, {
-    id: 'GROALN', // 路网图层（name字段）
+    id: 'GS_GROALN', // 路网图层（name字段）
     type: 'line',
     source: 'composite',
     'source-layer': 'GS_GROALN', // LN，line的简写
+    minzoom: 7,
     layout: {
       'line-cap': 'round',
       'line-join': 'round',
@@ -105,12 +106,11 @@ const layers = [{
       'line-width': {
         'base': 1.5,
         'stops': [
-          [9, 1],
-          [18, 80]
+          [9, 2],
+          [18, 4]
         ]
       },
       'line-color': '#8E44AD',
-      // 'fill-antialias': true
     }
   },
   /**

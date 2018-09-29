@@ -20,7 +20,7 @@ var map = new mapboxgl.Map({
 
 const _addSourceFunc = function () {
   addSource.addFuncLv8(map);
-  // addSource.addFuncLv9(map);
+  addSource.addFuncLv9(map);
   addSource.addFuncLv11(map);
   addSource.addFuncLv15(map);
 }

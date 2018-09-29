@@ -3,8 +3,9 @@
  */
 import CONFIG from '../config';
 
+const _visibleLevel = 8;
+
 export default function (map) {
-  const _visibleLevel = 8;
   if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv8)) {
     map.addSource(CONFIG.addLv8, {
       type: 'vector',

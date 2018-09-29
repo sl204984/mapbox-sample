@@ -73,21 +73,6 @@ const layers = [{
       'line-color': 'rgba(180, 180, 180, 1)',
       'line-offset': 0
     }
-  },
-  {
-    id: 'GHFCLN', // 记录了河流，黄河，隧道等的边界
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GHFCLN', // LN，line的简写
-    minzoom: 10,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-
-    },
-    paint: {
-
-    }
   }, {
     id: 'GHYDLN', // 记录了一些线性的水渠、河沟 不显示
     type: 'line',

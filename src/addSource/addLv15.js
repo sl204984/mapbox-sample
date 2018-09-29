@@ -3,8 +3,9 @@
  */
 import CONFIG from '../config';
 
+const _visibleLevel = 15;
+
 export default function (map) {
-  const _visibleLevel = 15;
   if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv15)) {
     map.addSource(CONFIG.addLv15, {
         type: 'vector',
@@ -47,6 +48,25 @@ export default function (map) {
           'fill-antialias': false
         }
       })
+      /**
+       * 线
+       */
+      // .addLayer({
+      //   id: 'GHFCLN', // 记录了河流，黄河，隧道等的边界
+      //   type: 'line',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GHFCLN', // LN，line的简写
+      //   minzoom: 10,
+      //   layout: {
+      //     'line-cap': 'round',
+      //     'line-join': 'round'
+      //   },
+      //   paint: {
+      //     'line-width': 1,
+      //     'line-color': '#009797',
+      //     'line-offset': 0
+      //   }
+      // })
       /**
        * 点
        */

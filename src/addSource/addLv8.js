@@ -23,7 +23,7 @@ export default function (map) {
         id: '8L_POI',
         type: 'symbol',
         source: CONFIG.addLv8,
-        'source-layer': '8L_POI', // py是面
+        'source-layer': '8L_POI',
         minzoom: 10,
         filter: ['all',
           ['!=', 'KIND', '190104'],
@@ -36,9 +36,9 @@ export default function (map) {
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,
-          'icon-image': '县级市',
+          'icon-image': 'ic_map_zhengfu_bg',
           'icon-text-fit': 'both',
-          'icon-text-fit-padding': [2, 2, 2, 2],
+          'icon-text-fit-padding': [2, 4, 2, 4],
           'text-justify': 'center',
           'text-font': ['黑体'],
           'text-pitch-alignment': 'viewport',
@@ -48,7 +48,7 @@ export default function (map) {
           'text-keep-upright': false
         },
         'paint': {
-          'text-color': '#000000'
+          'text-color': '#FFFFFF'
         }
       })
       .addLayer({
@@ -67,9 +67,9 @@ export default function (map) {
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,
-          'icon-image': '县级市',
+          'icon-image': 'ic_map_zhengfu_bg',
           'icon-text-fit': 'both',
-          'icon-text-fit-padding': [2, 2, 2, 2],
+          'icon-text-fit-padding': [2, 4, 2, 4],
           'text-justify': 'center',
           'text-font': ['黑体'],
           'text-pitch-alignment': 'viewport',
@@ -79,7 +79,7 @@ export default function (map) {
           'text-keep-upright': false
         },
         'paint': {
-          'text-color': '#000000'
+          'text-color': '#FFFFFF'
         }
       });
   }

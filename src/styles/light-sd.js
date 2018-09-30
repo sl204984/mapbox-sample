@@ -31,6 +31,7 @@ const layers = [{
     }
   },
   // 面
+
   {
     id: 'GHYDPL_7L', // 记录了一些水渠、河沟，水库的面状要素
     type: 'fill',
@@ -73,7 +74,7 @@ const layers = [{
     'source-layer': 'SD_GVEGPL', // py是面
     layout: {},
     paint: {
-      'fill-color': '#bbd98d',
+      'fill-color': '#BBD98D',
       'fill-opacity': 0.5,
       'fill-antialias': false
     }
@@ -97,7 +98,8 @@ const layers = [{
       'line-color': '#BBBBBB',
       'line-offset': 0
     }
-  }, {
+  },
+  {
     id: 'GRAILN_bg', // 记录了铁路，底层颜色灰色
     type: 'line',
     source: 'composite',

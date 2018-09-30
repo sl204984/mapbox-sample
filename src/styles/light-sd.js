@@ -128,123 +128,7 @@ const layers = [{
       'line-dasharray': [5, 5],
       'line-width': 1.6
     }
-  }, {
-    id: 'GS_GROALN_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'GS_GROALN', // LN，line的简写
-    filter: ['any',
-      ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
-    ],
-    minzoom: _visibleLevel,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-    },
-    paint: {
-      'line-width': {
-        'base': 2,
-        'stops': [
-          [7, 3],
-          [8, 2],
-          [9, 3],
-          [10, 4],
-          [11, 4],
-          [12, 7],
-          [13, 9],
-          [14, 9],
-          [15, 10],
-          [16, 10],
-          [17, 12],
-          [18, 14],
-          [19, 14],
-          [20, 22]
-        ]
-      },
-      'line-color': '#B06237'
-    }
-  }, {
-    id: 'GS_GROALN_GD', // 路网图层（name字段），国道
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'GS_GROALN', // 路网图层，国道和省道
-    filter: ['any',
-      ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
-    ],
-    minzoom: _visibleLevel,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-    },
-    paint: {
-      'line-width': {
-        'base': 2,
-        'stops': [
-          [7, 2],
-          [8, 1],
-          [9, 2],
-          [10, 3],
-          [11, 3],
-          [12, 5],
-          [13, 6],
-          [14, 6],
-          [15, 7],
-          [16, 7],
-          [17, 9],
-          [18, 11],
-          [19, 11],
-          [20, 19]
-        ]
-      },
-      'line-color': '#FECD6E'
-    }
   },
-  {
-    id: 'GS_GROALN_GD_NAME', // 国道名称
-    type: 'symbol',
-    source: 'composite',
-    'source-layer': 'GS_GROALN',
-    filter: ['any',
-      ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
-    ],
-    minzoom: _sdVisibleLevel,
-    // layout: {
-    //   'text-field': '{NAME}',
-    //   'visibility': 'visible',
-    //   'symbol-placement': 'line',
-    //   'text-size': 12,
-    //   'icon-image': '县级市', // 图标未换
-    //   'icon-text-fit': 'both',
-    //   'icon-text-fit-padding': [2, 2, 2, 2],
-    //   'text-justify': 'center',
-    //   'text-font': ['黑体'],
-    //   'text-pitch-alignment': 'viewport',
-    //   'text-rotation-alignment': 'viewport',
-    //   'icon-rotation-alignment': 'viewport',
-    //   'text-anchor': 'center',
-    //   'text-keep-upright': false,
-    // },
-    layout: {
-      'text-field': '{NAME}',
-      'visibility': 'visible',
-      'symbol-placement': 'line',
-      'text-font': ['Arial Unicode MS Bold'],
-      'text-pitch-alignment': 'viewport',
-      'symbol-spacing': 500,
-      'text-rotation-alignment': 'map',
-      'text-size': 12,
-      'icon-rotation-alignment': 'viewport'
-    },
-    paint: {
-      'text-color': 'rgba(65, 65, 65, 1)',
-      'text-halo-width': 2,
-      'text-halo-color': 'rgba(255, 255, 255, 1)',
-    }
-  },
-
 
   {
     id: 'GS_GROALN_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
@@ -335,7 +219,7 @@ const layers = [{
       'symbol-placement': 'line',
       'text-font': ['Arial Unicode MS Bold'],
       'text-pitch-alignment': 'viewport',
-      'symbol-spacing': 500,
+      'symbol-spacing': 50,
       'text-rotation-alignment': 'map',
       'text-size': 12,
       'icon-rotation-alignment': 'viewport'
@@ -346,6 +230,394 @@ const layers = [{
       'text-halo-color': 'rgba(255, 255, 255, 1)'
     }
   },
+
+  {
+    id: 'GS_GROALN_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'GS_GROALN', // LN，line的简写
+    filter: ['any',
+      ['==', 'CLASID', '420101'],
+      ['==', 'CLASID', '420102']
+    ],
+    minzoom: _visibleLevel,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+    },
+    paint: {
+      'line-width': {
+        'base': 2,
+        'stops': [
+          [7, 3],
+          [8, 2],
+          [9, 3],
+          [10, 4],
+          [11, 4],
+          [12, 7],
+          [13, 9],
+          [14, 9],
+          [15, 10],
+          [16, 10],
+          [17, 12],
+          [18, 14],
+          [19, 14],
+          [20, 22]
+        ]
+      },
+      'line-color': '#B06237'
+    }
+  }, {
+    id: 'GS_GROALN_GD', // 路网图层（name字段），国道
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'GS_GROALN', // 路网图层，国道和省道
+    filter: ['any',
+      ['==', 'CLASID', '420101'],
+      ['==', 'CLASID', '420102']
+    ],
+    minzoom: _visibleLevel,
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+    },
+    paint: {
+      'line-width': {
+        'base': 2,
+        'stops': [
+          [7, 2],
+          [8, 1],
+          [9, 2],
+          [10, 3],
+          [11, 3],
+          [12, 5],
+          [13, 6],
+          [14, 6],
+          [15, 7],
+          [16, 7],
+          [17, 9],
+          [18, 11],
+          [19, 11],
+          [20, 19]
+        ]
+      },
+      'line-color': '#FECD6E'
+    }
+  },
+  {
+    id: 'GS_GROALN_GD_NAME', // 国道名称
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['any',
+      ['==', 'CLASID', '420101'],
+      ['==', 'CLASID', '420102']
+    ],
+    minzoom: _sdVisibleLevel,
+    layout: {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-font': ['Arial Unicode MS Bold'],
+      'text-pitch-alignment': 'viewport',
+      'symbol-spacing': 50,
+      'text-rotation-alignment': 'map',
+      'text-size': 12,
+      'icon-rotation-alignment': 'viewport'
+    },
+    paint: {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)',
+    }
+  },
+  /*********************
+   * 后面要删除
+   *********************/
+  {
+    id: 'GS_GROALN_GD_NAME_QDSJZ', // 国道名称 青岛-石家庄
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '青岛-石家庄'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G308',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+  {
+    id: 'GS_GROALN_GD_NAME_SHGSZ', // 国道名称， 山海关-深圳
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '山海关-深圳'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G205',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_LYGHZ', // 国道名称， 连云港-菏泽
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '连云港-菏泽'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G327',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_YTST', // 国道名称， 烟台-汕头
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '烟台-汕头'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G206',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_QDLZGSGL', // 国道名称， 青岛-兰州高速公路
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '青岛-兰州高速公路'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G22',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_CCSZGSGL', // 国道名称， 长春-深圳高速公路
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '长春-深圳高速公路'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G25',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_RZLKGSGL', // 国道名称， 日照-兰考高速公路
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '日照-兰考高速公路'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G1511',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_BJSHGSGL', // 国道名称， 北京-上海高速公路
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '北京-上海高速公路'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G2',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_BJZH', // 国道名称， 北京-珠海
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '北京-珠海'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G105',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+  {
+    id: 'GS_GROALN_GD_NAME_RCLZ', // 国道名称， 荣成-兰州
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['==', 'NAME', '荣成-兰州'],
+    minzoom: _visibleLevel,
+    layout: {
+      'text-field': 'G309',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  },
+
+
+  /****************************
+   * 删除部分
+   *****************************/
+
   // 点
   {
     id: '7L_POI', // POI图层

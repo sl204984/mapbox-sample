@@ -49,34 +49,35 @@ const layers = [{
     'source-layer': 'SD_GVEGPL', // py是面
     layout: {},
     paint: {
-      'fill-color': '#58D68D',
+      'fill-color': '#bbd98d',
       'fill-opacity': 0.5,
       'fill-antialias': false
     }
   },
   // 线
-  // {
-  //   id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
-  //   type: 'line',
-  //   source: 'composite',
-  //   'source-layer': 'SD_GBOULN', // LN，line的简写
-  //   // minzoom: 10,
-  //   layout: {
-  //     'line-cap': 'round',
-  //     'line-join': 'round'
-  //   },
-  //   paint: {
-  //     'line-width': 1,
-  //     'line-color': 'rgba(180, 180, 180, 1)',
-  //     'line-offset': 0
-  //   }
-  // }, 
   {
+    id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
+    type: 'line',
+    source: 'composite',
+    'source-layer': 'SD_GBOULN', // LN，line的简写
+    filter: ['any', ['==', 'CLASID', '640201'],
+      ['==', 'CLASID', '250100']
+    ],
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round'
+    },
+    paint: {
+      'line-width': 1,
+      'line-color': '#BBBBBB',
+      'line-offset': 0
+    }
+  }, {
     id: 'GRAILN_bg', // 记录了铁路，底层颜色灰色
     type: 'line',
     source: 'composite',
     'source-layer': 'SD_GRAILN', // LN，line的简写
-    minzoom: _visibleLevel,
+    minzoom: 7,
     layout: {
       'line-cap': 'round',
       'line-join': 'round',
@@ -90,7 +91,7 @@ const layers = [{
     type: 'line',
     source: 'composite',
     'source-layer': 'SD_GRAILN', // LN，line的简写
-    minzoom: _visibleLevel,
+    minzoom: 7,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -173,6 +174,39 @@ const layers = [{
       'line-color': '#FECD6E'
     }
   },
+  {
+    id: 'GS_GROALN_GD_NAME', // 省道名称
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['all',
+      ['!=', 'CLASID', '420101'],
+      ['!=', 'CLASID', '420102']
+    ],
+    minzoom: _sdVisibleLevel,
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'line-center',
+      'text-size': 12,
+      'icon-image': '县级市', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 2, 2, 2],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)',
+
+    }
+  },
 
 
   {
@@ -212,7 +246,7 @@ const layers = [{
       'line-color': '#D6B95A'
     }
   }, {
-    id: 'GS_GROALN_SD', // 路网图层（name字段），国道
+    id: 'GS_GROALN_SD', // 路网图层（name字段），省道
     type: 'line',
     source: 'composite',
     'source-layer': 'GS_GROALN', // 路网图层，国道和省道
@@ -248,38 +282,40 @@ const layers = [{
       'line-color': '#FEEB82'
     }
   },
-  // {
-  //   id: 'GS_GROALN_SD_NAME',
-  //   type: 'symbol',
-  //   source: 'composite',
-  //   'source-layer': 'GS_GROALN',
-  //   filter: ['all',
-  //     ['!=', 'CLASID', '420101'],
-  //     ['!=', 'CLASID', '420102']
-  //   ],
-  //   minzoom: _sdVisibleLevel,
-  //   'layout': {
-  //     'text-field': '{NAME}',
-  //     'visibility': 'visible',
-  //     'symbol-placement': 'point',
-  //     'text-size': 12,
-  //     'icon-image': '县级市', // 图标未换
-  //     'icon-text-fit': 'both',
-  //     'icon-text-fit-padding': [2, 2, 2, 2],
-  //     'text-justify': 'center',
-  //     'text-font': ['黑体'],
-  //     'text-pitch-alignment': 'viewport',
-  //     'text-rotation-alignment': 'viewport',
-  //     'icon-rotation-alignment': 'viewport',
-  //     'text-anchor': 'center',
-  //     'text-keep-upright': false
-  //   },
-  //   'paint': {
-  //     'text-color': 'rgba(65, 65, 65, 1)',
-  //     'text-halo-width': 2,
-  //     'text-halo-color': 'rgba(255, 255, 255, 1)'
-  //   }
-  // },
+  {
+    id: 'GS_GROALN_SD_NAME', // 省道名称
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GS_GROALN',
+    filter: ['all',
+      ['!=', 'CLASID', '420101'],
+      ['!=', 'CLASID', '420102']
+    ],
+    minzoom: _sdVisibleLevel,
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': '县级市', // 图标未换
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 2, 2, 2],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+      // "symbol-placement": "line",
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)',
+
+    }
+  },
   // 点
   {
     id: '7L_POI', // POI图层

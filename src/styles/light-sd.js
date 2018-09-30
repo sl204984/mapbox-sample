@@ -20,6 +20,7 @@
 
 const _visibleLevel = 7;
 const _sdVisibleLevel = 9; // 省道
+const _ditchVisibleLevel = 12; // 沟和渠道
 
 const layers = [{
     id: 'background', // 背景
@@ -31,17 +32,41 @@ const layers = [{
   },
   // 面
   {
-    id: 'GHYDPL', // 记录了一些水渠、河沟，水库的面状要素
+    id: 'GHYDPL_7L', // 记录了一些水渠、河沟，水库的面状要素
     type: 'fill',
     source: 'composite',
     'source-layer': 'SD_GHYDPL', // py是面
+    filter: ['any',
+      ['==', 'CLASID', '210200'],
+      ['==', 'CLASID', '230101'],
+      ['==', 'CLASID', '240101']
+    ],
+    layout: {},
+    paint: {
+      'fill-color': '#85C1E9',
+      'fill-opacity': 1,
+      'fill-antialias': true
+    }
+  },
+  {
+    id: 'GHYDPL_OTH', // 记录了一些水渠、河沟，水库的面状要素
+    type: 'fill',
+    source: 'composite',
+    'source-layer': 'SD_GHYDPL', // py是面
+    filter: ['all',
+      ['!=', 'CLASID', '210200'],
+      ['!=', 'CLASID', '230101'],
+      ['!=', 'CLASID', '240101']
+    ],
+    minzoom: _ditchVisibleLevel,
     layout: {},
     paint: {
       'fill-color': '#85C1E9',
       'fill-opacity': 1,
       'fill-antialias': false
     }
-  }, {
+  },
+  {
     id: 'GVEGPL', // 记录了绿地
     type: 'fill',
     source: 'composite',
@@ -59,7 +84,8 @@ const layers = [{
     type: 'line',
     source: 'composite',
     'source-layer': 'SD_GBOULN', // LN，line的简写
-    filter: ['any', ['==', 'CLASID', '640201'],
+    filter: ['any',
+      ['==', 'CLASID', '640201'],
       ['==', 'CLASID', '250100']
     ],
     layout: {

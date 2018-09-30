@@ -13,10 +13,9 @@
  * 面在最底层，其次是线，其次是点；居民区在绿地上面，绿地在水系面上面
  * 
  * todolist 
- * 1. 铁路不见了
+ * 1. 国道、省道路牌问题
  * 2. 路网图层锯齿 -------> 分级别显示，看上去没这么密，就算解决了
  * 3. 政府两字没去掉
- * 4. 国道、省道名称问题
  */
 
 const _visibleLevel = 7;
@@ -175,36 +174,46 @@ const layers = [{
     }
   },
   {
-    id: 'GS_GROALN_GD_NAME', // 省道名称
+    id: 'GS_GROALN_GD_NAME', // 国道名称
     type: 'symbol',
     source: 'composite',
     'source-layer': 'GS_GROALN',
-    filter: ['all',
-      ['!=', 'CLASID', '420101'],
-      ['!=', 'CLASID', '420102']
+    filter: ['any',
+      ['==', 'CLASID', '420101'],
+      ['==', 'CLASID', '420102']
     ],
     minzoom: _sdVisibleLevel,
-    'layout': {
+    // layout: {
+    //   'text-field': '{NAME}',
+    //   'visibility': 'visible',
+    //   'symbol-placement': 'line',
+    //   'text-size': 12,
+    //   'icon-image': '县级市', // 图标未换
+    //   'icon-text-fit': 'both',
+    //   'icon-text-fit-padding': [2, 2, 2, 2],
+    //   'text-justify': 'center',
+    //   'text-font': ['黑体'],
+    //   'text-pitch-alignment': 'viewport',
+    //   'text-rotation-alignment': 'viewport',
+    //   'icon-rotation-alignment': 'viewport',
+    //   'text-anchor': 'center',
+    //   'text-keep-upright': false,
+    // },
+    layout: {
       'text-field': '{NAME}',
       'visibility': 'visible',
-      'symbol-placement': 'line-center',
-      'text-size': 12,
-      'icon-image': '县级市', // 图标未换
-      'icon-text-fit': 'both',
-      'icon-text-fit-padding': [2, 2, 2, 2],
-      'text-justify': 'center',
-      'text-font': ['黑体'],
+      'symbol-placement': 'line',
+      'text-font': ['Arial Unicode MS Bold'],
       'text-pitch-alignment': 'viewport',
-      'text-rotation-alignment': 'viewport',
-      'icon-rotation-alignment': 'viewport',
-      'text-anchor': 'center',
-      'text-keep-upright': false,
+      'symbol-spacing': 500,
+      'text-rotation-alignment': 'map',
+      'text-size': 12,
+      'icon-rotation-alignment': 'viewport'
     },
-    'paint': {
+    paint: {
       'text-color': 'rgba(65, 65, 65, 1)',
       'text-halo-width': 2,
       'text-halo-color': 'rgba(255, 255, 255, 1)',
-
     }
   },
 
@@ -292,22 +301,16 @@ const layers = [{
       ['!=', 'CLASID', '420102']
     ],
     minzoom: _sdVisibleLevel,
-    'layout': {
+    layout: {
       'text-field': '{NAME}',
       'visibility': 'visible',
       'symbol-placement': 'line',
-      'text-size': 12,
-      'icon-image': '县级市', // 图标未换
-      'icon-text-fit': 'both',
-      'icon-text-fit-padding': [2, 2, 2, 2],
-      'text-justify': 'center',
-      'text-font': ['黑体'],
+      'text-font': ['Arial Unicode MS Bold'],
       'text-pitch-alignment': 'viewport',
-      'text-rotation-alignment': 'viewport',
-      'icon-rotation-alignment': 'viewport',
-      'text-anchor': 'center',
-      'text-keep-upright': false,
-      // "symbol-placement": "line",
+      'symbol-spacing': 500,
+      'text-rotation-alignment': 'map',
+      'text-size': 12,
+      'icon-rotation-alignment': 'viewport'
     },
     'paint': {
       'text-color': 'rgba(65, 65, 65, 1)',

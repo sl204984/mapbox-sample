@@ -43,7 +43,7 @@ const layers = [{
     ],
     layout: {},
     paint: {
-      'fill-color': '#85C1E9',
+      'fill-color': '#abc5ef',
       'fill-opacity': 1,
       'fill-antialias': true
     }
@@ -61,7 +61,7 @@ const layers = [{
     minzoom: _ditchVisibleLevel,
     layout: {},
     paint: {
-      'fill-color': '#85C1E9',
+      'fill-color': '#abc5ef',
       'fill-opacity': 1,
       'fill-antialias': false
     }
@@ -341,8 +341,7 @@ const layers = [{
     'paint': {
       'text-color': 'rgba(65, 65, 65, 1)',
       'text-halo-width': 2,
-      'text-halo-color': 'rgba(255, 255, 255, 1)',
-
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
     }
   },
   // 点

@@ -1,6 +1,7 @@
 /**
  * @author sl 2019-01-02
- * todolist 路网图层CLASID不对，覆盖之前的国道，无法通过CLASID区分和过滤
+ * todolist 
+ * 1. 路网图层CLASID不对，覆盖之前的国道，无法通过CLASID区分和过滤  ======> 高速覆盖国道
  */
 import CONFIG from '../config';
 
@@ -69,7 +70,7 @@ export default function (map) {
        * 线
        */
       // .addLayer({
-      //   id: 'SD_GHFCLN', // 记录了河流，黄河，隧道等的边界
+      //   id: 'SD_GHFCLN', // 记录了河流，黄河，隧道等的边界   ====> 没有名称
       //   type: 'symbol',
       //   source: CONFIG.addLv15,
       //   'source-layer': 'SD_GHFCLN', // LN，line的简写
@@ -171,12 +172,28 @@ export default function (map) {
       //   }
       // })
 
+
       .addLayer({
-        id: 'SD_GROALN_bg', // 路网图层（name字段），底部图层，充当描边
+        id: 'SD_GROALN_ZD_bg', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
         type: 'line',
         source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '420400'],
+          ['==', 'CLASID', '420500'],
+          ['==', 'CLASID', '420700'],
+          ['==', 'CLASID', '430400'],
+          ['==', 'CLASID', '430503'],
+          ['==', 'CLASID', '430531'],
+          ['==', 'CLASID', '430532'],
+          ['==', 'CLASID', '430533'],
+          ['==', 'CLASID', '430600'],
+          ['==', 'CLASID', '430700'],
+          ['==', 'CLASID', '440100'],
+          ['==', 'CLASID', '440200'],
+          ['==', 'CLASID', '440300'],
+          ['==', 'CLASID', '440600'],
+        ],
         'source-layer': 'SD_GROALN',
-        filter: ['>=', 'CLASID', '420301'],
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -185,31 +202,208 @@ export default function (map) {
           'line-width': {
             'base': 2,
             'stops': [
-              [7, 3],
-              [8, 2],
-              [9, 3],
-              [10, 4],
-              [11, 4],
-              [12, 7],
-              [13, 9],
-              [14, 9],
-              [15, 10],
-              [16, 10],
-              [17, 12],
-              [18, 14],
-              [19, 14],
-              [20, 22]
+              [15, 5.2],
+              [16, 5.2],
+              [17, 6.1],
+              [18, 7],
+              [19, 8],
+              [20, 17.5]
+            ]
+          },
+          'line-color': '#DCD2AD'
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_ZD', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '420400'],
+          ['==', 'CLASID', '420500'],
+          ['==', 'CLASID', '420700'],
+          ['==', 'CLASID', '430400'],
+          ['==', 'CLASID', '430503'],
+          ['==', 'CLASID', '430531'],
+          ['==', 'CLASID', '430532'],
+          ['==', 'CLASID', '430533'],
+          ['==', 'CLASID', '430600'],
+          ['==', 'CLASID', '430700'],
+          ['==', 'CLASID', '440100'],
+          ['==', 'CLASID', '440200'],
+          ['==', 'CLASID', '440300'],
+          ['==', 'CLASID', '440600'],
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 4],
+              [16, 4],
+              [17, 5],
+              [18, 6],
+              [19, 7],
+              [20, 16]
+            ]
+          },
+          'line-color': '#FEFEFE'
+        }
+      })
+
+      .addLayer({
+        id: 'SD_GROALN_CGD_bg', // 路网图层（name字段），次干道、县道
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '420301'],
+          ['==', 'CLASID', '420302'],
+          ['==', 'CLASID', '430502'],
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 6],
+              [16, 7.5],
+              [17, 8.5],
+              [18, 9.5],
+              [19, 10.5],
+              [20, 15]
+            ]
+          },
+          'line-color': '#D6C878'
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_CGD', // 路网图层（name字段），次干道、县道
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '420301'],
+          ['==', 'CLASID', '420302'],
+          ['==', 'CLASID', '430502'],
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 5],
+              [16, 6],
+              [17, 7],
+              [18, 8],
+              [19, 9],
+              [20, 14]
+            ]
+          },
+          'line-color': '#FEF091'
+        }
+      })
+
+      .addLayer({
+        id: 'SD_GROALN_ZGD_bg', // 路网图层（name字段），主干道
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['==', 'CLASID', '430501'],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 6],
+              [16, 7.5],
+              [17, 8.5],
+              [18, 9.5],
+              [19, 10.5],
+              [20, 16]
+            ]
+          },
+          'line-color': '#D6B95A'
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_ZGD', // 路网图层（name字段），主干道
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['==', 'CLASID', '430501'],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 5],
+              [16, 6],
+              [17, 7],
+              [18, 8],
+              [19, 9],
+              [20, 14]
+            ]
+          },
+          'line-color': '#FEEB82'
+        }
+      })
+
+      .addLayer({
+        id: 'SD_GROALN_GS_bg', // 路网图层（name字段），高速公路，背景充当描边
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '420704'],
+          ['==', 'CLASID', '420705'],
+          ['==', 'CLASID', '420706'],
+          ['==', 'CLASID', '420600']
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 8.5],
+              [16, 8.5],
+              [17, 10],
+              [18, 12.5],
+              [19, 12.5],
+              [20, 20]
             ]
           },
           'line-color': '#5E37AA'
         }
       })
       .addLayer({
-        id: 'SD_GROALN', // 路网图层（name字段），国道
-        type: 'line',
+        id: 'SD_GROALN_GS', // 路网图层（name字段），高速公路
         type: 'line',
         source: CONFIG.addLv15,
-        filter: ['>=', 'CLASID', '420301'],
+        filter: ['any',
+          ['==', 'CLASID', '420704'],
+          ['==', 'CLASID', '420705'],
+          ['==', 'CLASID', '420706'],
+          ['==', 'CLASID', '420600']
+        ],
         'source-layer': 'SD_GROALN',
         layout: {
           'line-cap': 'round',
@@ -219,14 +413,6 @@ export default function (map) {
           'line-width': {
             'base': 2,
             'stops': [
-              [7, 2],
-              [8, 1],
-              [9, 2],
-              [10, 3],
-              [11, 3],
-              [12, 5],
-              [13, 6],
-              [14, 6],
               [15, 7],
               [16, 7],
               [17, 9],
@@ -238,6 +424,64 @@ export default function (map) {
           'line-color': '#BA92F1'
         }
       })
+
+      .addLayer({
+        id: 'SD_GROALN_KSL_bg', // 路网图层（name字段），背景充当描边 快速路，高架路
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '430200'],
+          ['==', 'CLASID', '430300']
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 8.5],
+              [16, 8.5],
+              [17, 10],
+              [18, 12.5],
+              [19, 12.5],
+              [20, 20]
+            ]
+          },
+          'line-color': '#5E37AA'
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_KSL', // 路网图层（name字段） 快速路，高架路
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['any',
+          ['==', 'CLASID', '430200'],
+          ['==', 'CLASID', '430300']
+        ],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [15, 7],
+              [16, 7],
+              [17, 9],
+              [18, 11],
+              [19, 11],
+              [20, 19]
+            ]
+          },
+          'line-color': '#BA92F1'
+        }
+      })
+
       .addLayer({
         id: 'SD_GROALN_NAME',
         type: 'symbol',
@@ -246,17 +490,15 @@ export default function (map) {
         layout: {
           'text-field': '{NAME}',
           'visibility': 'visible',
-          'symbol-placement': 'point',
-          'text-size': 11,
-          'text-padding': 4,
-          'text-justify': 'left',
-          'text-anchor': 'left',
-          'text-offset': [0.5, 0],
-          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+          'symbol-placement': 'line',
+          'text-font': ['Arial Unicode MS Bold'],
           'text-pitch-alignment': 'viewport',
-          'text-rotation-alignment': 'viewport',
+          'symbol-spacing': 500,
+          'text-rotation-alignment': 'map',
+          'text-size': 12,
+          'icon-rotation-alignment': 'viewport'
         },
-        paint: {
+        'paint': {
           'text-color': '#2E7EAF',
           'text-halo-width': 2,
           'text-halo-color': 'rgba(255, 255, 255, 1)'

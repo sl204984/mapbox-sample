@@ -36,7 +36,7 @@ export default function (map) {
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,
-          'icon-image': 'ic_map_gray_bg',
+          // 'icon-image': 'ic_map_gray_bg',
           'icon-text-fit': 'both',
           'icon-text-fit-padding': [2, 4, 2, 4],
           'text-justify': 'center',
@@ -48,7 +48,9 @@ export default function (map) {
           'text-keep-upright': false
         },
         'paint': {
-          'text-color': '#FFFFFF'
+          'text-color': '#8c9c99',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
         }
       })
       .addLayer({
@@ -67,7 +69,7 @@ export default function (map) {
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,
-          'icon-image': 'ic_map_gray_bg',
+          // 'icon-image': 'ic_map_gray_bg',
           'icon-text-fit': 'both',
           'icon-text-fit-padding': [2, 4, 2, 4],
           'text-justify': 'center',
@@ -79,7 +81,9 @@ export default function (map) {
           'text-keep-upright': false
         },
         'paint': {
-          'text-color': '#FFFFFF'
+          'text-color': '#8c9c99',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
         }
       });
   }

@@ -1,5 +1,6 @@
 /**
  * @author sl 2019-01-02
+ * todolist 路网图层CLASID不对，覆盖之前的国道，无法通过CLASID区分和过滤
  */
 import CONFIG from '../config';
 
@@ -25,32 +26,6 @@ export default function (map) {
           'fill-color': '#CACFD2',
           'fill-opacity': 1,
           'fill-antialias': false
-        }
-      })
-      .addLayer({
-        id: 'GRESPL_1_3D', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
-        source: CONFIG.addLv15,
-        'source-layer': 'SD_GRESPL_1', // py是面
-        type: 'fill-extrusion',
-        'minzoom': _visibleLevel,
-        paint: {
-          'fill-extrusion-color': '#aaa',
-
-          // use an 'interpolate' expression to add a smooth transition effect to the
-          // buildings as the user zooms in
-          'fill-extrusion-height': [
-            "interpolate", ["linear"],
-            ["zoom"],
-            15, 0,
-            15.05, ["get", "height"]
-          ],
-          'fill-extrusion-base': [
-            "interpolate", ["linear"],
-            ["zoom"],
-            15, 0,
-            15.05, ["get", "min_height"]
-          ],
-
         }
       })
       .addLayer({
@@ -195,28 +170,76 @@ export default function (map) {
       //     'text-halo-color': 'rgba(255, 255, 255, 1)'
       //   }
       // })
+
       .addLayer({
-        id: 'SD_GROALN', // 路网图层（name字段）
+        id: 'SD_GROALN_bg', // 路网图层（name字段），底部图层，充当描边
         type: 'line',
         source: CONFIG.addLv15,
-        'source-layer': 'SD_GROALN', // LN，line的简写
+        'source-layer': 'SD_GROALN',
+        filter: ['>=', 'CLASID', '420301'],
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
         },
         paint: {
           'line-width': {
-            'base': 1.5,
+            'base': 2,
             'stops': [
-              [9, 2],
-              [18, 4]
+              [7, 3],
+              [8, 2],
+              [9, 3],
+              [10, 4],
+              [11, 4],
+              [12, 7],
+              [13, 9],
+              [14, 9],
+              [15, 10],
+              [16, 10],
+              [17, 12],
+              [18, 14],
+              [19, 14],
+              [20, 22]
             ]
           },
-          'line-color': '#fECE70',
+          'line-color': '#5E37AA'
         }
       })
       .addLayer({
-        id: 'SD_GROALN_NAME', // 记录了一些线性的水渠、河沟 不显示  ======> 不显示是不是不妥
+        id: 'SD_GROALN', // 路网图层（name字段），国道
+        type: 'line',
+        type: 'line',
+        source: CONFIG.addLv15,
+        filter: ['>=', 'CLASID', '420301'],
+        'source-layer': 'SD_GROALN',
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [7, 2],
+              [8, 1],
+              [9, 2],
+              [10, 3],
+              [11, 3],
+              [12, 5],
+              [13, 6],
+              [14, 6],
+              [15, 7],
+              [16, 7],
+              [17, 9],
+              [18, 11],
+              [19, 11],
+              [20, 19]
+            ]
+          },
+          'line-color': '#BA92F1'
+        }
+      })
+      .addLayer({
+        id: 'SD_GROALN_NAME',
         type: 'symbol',
         source: CONFIG.addLv15,
         'source-layer': 'SD_GROALN', // LN，line的简写
@@ -243,32 +266,32 @@ export default function (map) {
       /**
        * 点
        */
-      .addLayer({
-        id: 'SD_GHFCPT', // 此图层记录了一些水站和XX闸
-        type: 'symbol',
-        source: CONFIG.addLv15,
-        'source-layer': 'SD_GHFCPT',
-        layout: {
-          'text-field': '{NAME}',
-          'visibility': 'visible',
-          'symbol-placement': 'point',
-          'text-size': 11,
-          'text-padding': 4,
-          'icon-image': 'btn_bubble_a_normal',
-          'text-justify': 'left',
-          'text-anchor': 'left',
-          'text-offset': [0.5, 0],
-          'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
-          'text-pitch-alignment': 'viewport',
-          'text-rotation-alignment': 'viewport',
-          'icon-rotation-alignment': 'viewport'
-        },
-        paint: {
-          'text-color': '#737517',
-          'text-halo-width': 2,
-          'text-halo-color': 'rgba(255, 255, 255, 1)'
-        }
-      })
+      // .addLayer({
+      //   id: 'SD_GHFCPT', // 此图层记录了一些水站和XX闸
+      //   type: 'symbol',
+      //   source: CONFIG.addLv15,
+      //   'source-layer': 'SD_GHFCPT',
+      //   layout: {
+      //     'text-field': '{NAME}',
+      //     'visibility': 'visible',
+      //     'symbol-placement': 'point',
+      //     'text-size': 11,
+      //     'text-padding': 4,
+      //     'icon-image': 'btn_bubble_a_normal',
+      //     'text-justify': 'left',
+      //     'text-anchor': 'left',
+      //     'text-offset': [0.5, 0],
+      //     'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      //     'text-pitch-alignment': 'viewport',
+      //     'text-rotation-alignment': 'viewport',
+      //     'icon-rotation-alignment': 'viewport'
+      //   },
+      //   paint: {
+      //     'text-color': '#737517',
+      //     'text-halo-width': 2,
+      //     'text-halo-color': 'rgba(255, 255, 255, 1)'
+      //   }
+      // })
       // .addLayer({
       //   id: 'GHYDPT', // 记录一些井和XX泉  =======> 貌似没有数据 不对，是 NAME 属性为空，但是数据还是有的
       //   type: 'symbol',
@@ -424,36 +447,66 @@ export default function (map) {
         }
       });
 
-    var layers = map.getStyle().layers;
+    // 增加 3d 建筑
+    const layers = map.getStyle().layers;
 
-    var labelLayerId;
-    for (var i = 0; i < layers.length; i++) {
-      if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
-        labelLayerId = layers[i].id;
-        break;
-      }
-    }
+    let labelLayerId = 'OTH_POI';
+
     map.addLayer({
-      'id': '3d-buildings',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_1',
-      // 'filter': ['==', 'extrude', 'true'],
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-
-        // use an 'interpolate' expression to add a smooth transition effect to the
-        // buildings as the user zooms in
-        'fill-extrusion-height': 30,
-        'fill-extrusion-base': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ["get", "min_height"]
-        ],
-        'fill-extrusion-opacity': .6
-      }
-    }, labelLayerId);
+        'id': 'GRESPL_1_3D',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GRESPL_1',
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+          'fill-extrusion-color': '#aaa',
+          // use an 'interpolate' expression to add a smooth transition effect to the
+          // buildings as the user zooms in
+          'fill-extrusion-height': 30,
+          'fill-extrusion-base': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "min_height"]
+          ],
+          'fill-extrusion-opacity': .6
+        }
+      }, labelLayerId)
+      .addLayer({
+        'id': 'GRESPL_2_3D',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GRESPL_2',
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+          'fill-extrusion-color': '#aaa',
+          'fill-extrusion-height': 30,
+          'fill-extrusion-base': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "min_height"]
+          ],
+          'fill-extrusion-opacity': .6
+        }
+      }, labelLayerId)
+      .addLayer({
+        'id': 'GRESPL_3_3D',
+        source: CONFIG.addLv15,
+        'source-layer': 'SD_GRESPL_3',
+        'type': 'fill-extrusion',
+        'minzoom': 15,
+        'paint': {
+          'fill-extrusion-color': '#aaa',
+          'fill-extrusion-height': 30,
+          'fill-extrusion-base': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "min_height"]
+          ],
+          'fill-extrusion-opacity': .6
+        }
+      }, labelLayerId);
   }
 }

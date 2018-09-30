@@ -14,7 +14,7 @@
  * 
  * todolist 
  * 1. 铁路不见了
- * 2. 路网图层锯齿
+ * 2. 路网图层锯齿 -------> 分级别显示，看上去没这么密，就算解决了
  * 3. 政府两字没去掉
  * 4. 国道、省道名称问题
  */
@@ -173,37 +173,8 @@ const layers = [{
       'line-color': '#FECD6E'
     }
   },
-  // {
-  //   id: 'GS_GROALN_GD_NAME',
-  //   type: 'symbol',
-  //   source: 'composite',
-  //   'source-layer': 'GS_GROALN',
-  //   filter: ['any',
-  //     ['==', 'CLASID', '420101'],
-  //     ['==', 'CLASID', '420102']
-  //   ],
-  //   'layout': {
-  //     'text-field': '{NAME}',
-  //     'visibility': 'visible',
-  //     'symbol-placement': 'point',
-  //     'text-size': 12,
-  //     'icon-image': '县级市', // 图标未换
-  //     'icon-text-fit': 'both',
-  //     'icon-text-fit-padding': [2, 2, 2, 2],
-  //     'text-justify': 'center',
-  //     'text-font': ['黑体'],
-  //     'text-pitch-alignment': 'viewport',
-  //     'text-rotation-alignment': 'viewport',
-  //     'icon-rotation-alignment': 'viewport',
-  //     'text-anchor': 'center',
-  //     'text-keep-upright': false
-  //   },
-  //   'paint': {
-  //     'text-color': 'rgba(65, 65, 65, 1)',
-  //     'text-halo-width': 2,
-  //     'text-halo-color': 'rgba(255, 255, 255, 1)'
-  //   }
-  // }, 
+
+
   {
     id: 'GS_GROALN_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
     type: 'line',
@@ -238,7 +209,7 @@ const layers = [{
           [20, 22]
         ]
       },
-      'line-color': '#B06237'
+      'line-color': '#D6B95A'
     }
   }, {
     id: 'GS_GROALN_SD', // 路网图层（name字段），国道

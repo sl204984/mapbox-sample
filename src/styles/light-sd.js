@@ -620,16 +620,16 @@ const layers = [{
 
   // 点
   {
-    id: '7L_POI', // POI图层
+    id: 'SD_POI_LEVEL7_1009', // POI图层
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'DS_POI',
+    'source-layer': 'SD_POI_LEVEL7_1009',
     minzoom: _visibleLevel,
     'layout': {
       'text-field': {
         'stops': [
-          [7, '{newname}'],
-          // [14, '{newname}人民政府']
+          [7, '{NAME}'],
+          // [14, '{NAME}人民政府']
         ]
       },
       'visibility': 'visible',

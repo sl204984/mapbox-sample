@@ -15,12 +15,12 @@ export default function (map) {
       ],
       minzoom: _visibleLevel
     }).addLayer({
-      id: '9L_POI',
+      id: 'SD_POI_LEVEL9_1009',
       type: 'symbol',
       source: CONFIG.addLv9,
-      'source-layer': '9L_POI', // py是面
+      'source-layer': 'SD_POI_LEVEL9_1009', // py是面
       'layout': {
-        'text-field': '{newname}',
+        'text-field': '{NAME}',
         'visibility': 'visible',
         'symbol-placement': 'point',
         'text-size': 11,

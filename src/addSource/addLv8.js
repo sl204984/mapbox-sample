@@ -20,10 +20,10 @@ export default function (map) {
         minzoom: _visibleLevel
       })
       .addLayer({
-        id: '8L_POI',
+        id: 'SD_POI_LEVEL8_1009',
         type: 'symbol',
         source: CONFIG.addLv8,
-        'source-layer': '8L_POI',
+        'source-layer': 'SD_POI_LEVEL8_1009',
         minzoom: 10,
         filter: ['all',
           ['!=', 'KIND', '190104'],
@@ -32,7 +32,7 @@ export default function (map) {
           ['!=', 'KIND', '190108'],
         ],
         'layout': {
-          'text-field': '{newname}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,
@@ -57,7 +57,7 @@ export default function (map) {
         id: '8L_POI_QX',
         type: 'symbol',
         source: CONFIG.addLv8,
-        'source-layer': '8L_POI', // py是面
+        'source-layer': 'SD_POI_LEVEL8_1009', // py是面
         filter: ['any',
           ['==', 'KIND', '190104'],
           ['==', 'KIND', '190105'],
@@ -65,7 +65,7 @@ export default function (map) {
           ['==', 'KIND', '190108'],
         ],
         'layout': {
-          'text-field': '{newname}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 12,

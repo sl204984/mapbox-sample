@@ -11,8 +11,11 @@ var map = new mapboxgl.Map({
   container: 'map',
   style,
   showTileBoundaries: true,
-  center: [117.8929, 37.554],
-  zoom: 15,
+  center: [118.034803, 36.80564],
+  zoom: 18,
+  pitch: 60,
+  bearing: -13.6,
+
   minzoom: 7,
   maxzoom: 22,
   localIdeographFontFamily: "'黑体'"

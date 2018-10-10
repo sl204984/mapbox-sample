@@ -46,7 +46,7 @@ const layers = [{
     paint: {
       'fill-color': '#abc5ef',
       'fill-opacity': 1,
-      'fill-antialias': true
+      'fill-antialias': false
     }
   },
   {
@@ -219,7 +219,7 @@ const layers = [{
       'symbol-placement': 'line',
       'text-font': ['Arial Unicode MS Bold'],
       'text-pitch-alignment': 'viewport',
-      'symbol-spacing': 50,
+      'symbol-spacing': 500,
       'text-rotation-alignment': 'map',
       'text-size': 12,
       'icon-rotation-alignment': 'viewport'
@@ -320,7 +320,7 @@ const layers = [{
       'symbol-placement': 'line',
       'text-font': ['Arial Unicode MS Bold'],
       'text-pitch-alignment': 'viewport',
-      'symbol-spacing': 50,
+      'symbol-spacing': 500,
       'text-rotation-alignment': 'map',
       'text-size': 12,
       'icon-rotation-alignment': 'viewport'

@@ -666,9 +666,9 @@ export default function (map) {
         id: 'OTH_POI',
         type: 'symbol',
         source: CONFIG.addLv15,
-        'source-layer': 'OTH_POI', // py是面
+        'source-layer': 'SD_POI_LEVEL15_1009', // py是面
         'layout': {
-          'text-field': '{newname}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 11,
@@ -697,19 +697,24 @@ export default function (map) {
     map.addLayer({
         'id': 'GRESPL_1_3D',
         source: CONFIG.addLv15,
-        'source-layer': 'SD_GRESPL_1',
+        'source-layer': 'SD_GRESPL_1_1009',
         'type': 'fill-extrusion',
         'minzoom': 15,
         'paint': {
           'fill-extrusion-color': '#aaa',
           // use an 'interpolate' expression to add a smooth transition effect to the
           // buildings as the user zooms in
-          'fill-extrusion-height': 30,
+          'fill-extrusion-height': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "height"]
+          ],
           'fill-extrusion-base': [
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "min_height"]
+            15.05, ["get", "H"]
           ],
           'fill-extrusion-opacity': .6
         }
@@ -717,17 +722,22 @@ export default function (map) {
       .addLayer({
         'id': 'GRESPL_2_3D',
         source: CONFIG.addLv15,
-        'source-layer': 'SD_GRESPL_2',
+        'source-layer': 'SD_GRESPL_2_1009',
         'type': 'fill-extrusion',
         'minzoom': 15,
         'paint': {
           'fill-extrusion-color': '#aaa',
-          'fill-extrusion-height': 30,
+          'fill-extrusion-height': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "height"]
+          ],
           'fill-extrusion-base': [
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "min_height"]
+            15.05, ["get", "H"]
           ],
           'fill-extrusion-opacity': .6
         }
@@ -735,17 +745,22 @@ export default function (map) {
       .addLayer({
         'id': 'GRESPL_3_3D',
         source: CONFIG.addLv15,
-        'source-layer': 'SD_GRESPL_3',
+        'source-layer': 'SD_GRESPL_3_1009',
         'type': 'fill-extrusion',
         'minzoom': 15,
         'paint': {
           'fill-extrusion-color': '#aaa',
-          'fill-extrusion-height': 30,
+          'fill-extrusion-height': [
+            "interpolate", ["linear"],
+            ["zoom"],
+            15, 0,
+            15.05, ["get", "height"]
+          ],
           'fill-extrusion-base': [
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "min_height"]
+            15.05, ["get", "H"]
           ],
           'fill-extrusion-opacity': .6
         }

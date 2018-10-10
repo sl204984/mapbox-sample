@@ -708,14 +708,9 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "height"]
-          ],
-          'fill-extrusion-base': [
-            "interpolate", ["linear"],
-            ["zoom"],
-            15, 0,
             15.05, ["get", "H"]
           ],
+          'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6
         }
       }, labelLayerId)
@@ -731,14 +726,9 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "height"]
-          ],
-          'fill-extrusion-base': [
-            "interpolate", ["linear"],
-            ["zoom"],
-            15, 0,
             15.05, ["get", "H"]
           ],
+          'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6
         }
       }, labelLayerId)
@@ -754,14 +744,9 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "height"]
-          ],
-          'fill-extrusion-base': [
-            "interpolate", ["linear"],
-            ["zoom"],
-            15, 0,
             15.05, ["get", "H"]
           ],
+          'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6
         }
       }, labelLayerId);

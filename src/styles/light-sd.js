@@ -99,6 +99,22 @@ const layers = [{
       'line-offset': 0
     }
   },
+  // {
+  //   id: 'boundaryline', // 记录了省边界
+  //   type: 'line',
+  //   source: 'composite',
+  //   'source-layer': 'boundaryline', // LN，line的简写
+  //   layout: {
+  //     'line-cap': 'round',
+  //     'line-join': 'round'
+  //   },
+  //   paint: {
+  //     'line-width': 1,
+  //     'line-color': '#BBBBBB',
+  //     'line-offset': 0
+  //   }
+  // },
+
   {
     id: 'GRAILN_bg', // 记录了铁路，底层颜色灰色
     type: 'line',

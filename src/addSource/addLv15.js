@@ -708,7 +708,7 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "H"]
+            15.05, ['*', ['+', ["get", "H"], 1], 3]
           ],
           'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6
@@ -726,7 +726,7 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "H"]
+            15.05, ['*', ['+', ["get", "H"], 1], 3]
           ],
           'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6
@@ -744,7 +744,7 @@ export default function (map) {
             "interpolate", ["linear"],
             ["zoom"],
             15, 0,
-            15.05, ["get", "H"]
+            15.05, ['*', ['+', ["get", "H"], 1], 3]
           ],
           'fill-extrusion-base': 0,
           'fill-extrusion-opacity': .6

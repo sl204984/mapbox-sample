@@ -91,7 +91,7 @@ const style = {
 
 function _checkSource(map, source) {
   for (let key in source) {
-    if (map.getSource(CONFIG.addLv8))
+    if (map.getSource(key))
       return false;
   }
   return true;

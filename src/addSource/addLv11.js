@@ -8,6 +8,7 @@ const _visibleLevel = 11;
 const _roadVisibleLv = 11;
 
 const style = {
+  visibleLevel: 11,
   source: {
     [CONFIG.addLv11]: {
       type: 'vector',
@@ -202,11 +203,19 @@ const style = {
   ]
 };
 
+function _checkSource(map, source) {
+  for (let key in source) {
+    if (map.getSource(key))
+      return false;
+  }
+  return true;
+}
 
 export default function (map) {
-  if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv11)) {
-    const source = style.source;
-    const layers = style.layers;
+  const source = style.source;
+  const layers = style.layers;
+  if (map.getZoom() >= style.visibleLevel && _checkSource(map, source)) {
+
     for (let key in source) {
       map.addSource(key, source[key]);
     }

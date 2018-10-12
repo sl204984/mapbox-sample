@@ -5,6 +5,7 @@
 import CONFIG from '../config';
 
 const _visibleLevel = 11;
+const _roadVisibleLv = 13;
 
 export default function (map) {
   if (map.getZoom() >= _visibleLevel && !map.getSource(CONFIG.addLv11)) {
@@ -16,6 +17,97 @@ export default function (map) {
         ],
         minzoom: _visibleLevel
       })
+      // 道路
+      .addLayer({
+        id: 'GROLAN_11_1009_bg', // 路网图层（name字段），次干道、县道
+        type: 'line',
+        source: CONFIG.addLv11,
+        'source-layer': 'GROLAN_11_1009',
+        minzoom: _roadVisibleLv,
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [7, 3],
+              [8, 2],
+              [9, 3],
+              [10, 4],
+              [11, 4],
+              [12, 7],
+              [13, 9],
+              [14, 9],
+              [15, 10],
+              [16, 10],
+              [17, 12],
+              [18, 14],
+              [19, 14],
+              [20, 22]
+            ]
+          },
+          'line-color': '#D6B95A'
+        }
+      })
+      .addLayer({
+        id: 'GROLAN_11_1009', // 路网图层（name字段），次干道、县道
+        type: 'line',
+        source: CONFIG.addLv11,
+        'source-layer': 'GROLAN_11_1009',
+        minzoom: _roadVisibleLv,
+        layout: {
+          'line-cap': 'round',
+          'line-join': 'round',
+        },
+        paint: {
+          'line-width': {
+            'base': 2,
+            'stops': [
+              [7, 2],
+              [8, 1],
+              [9, 2],
+              [10, 3],
+              [11, 3],
+              [12, 5],
+              [13, 6],
+              [14, 6],
+              [15, 7],
+              [16, 7],
+              [17, 9],
+              [18, 11],
+              [19, 11],
+              [20, 19]
+            ]
+          },
+          'line-color': '#FEEB82'
+        }
+      })
+      .addLayer({
+        id: 'GROLAN_11_1009_NAME', // 省道名称
+        type: 'symbol',
+        source: CONFIG.addLv11,
+        'source-layer': 'GROLAN_11_1009',
+        minzoom: _roadVisibleLv,
+        layout: {
+          'text-field': '{NAME}',
+          'visibility': 'visible',
+          'symbol-placement': 'line',
+          'text-font': ['Arial Unicode MS Bold'],
+          'text-pitch-alignment': 'viewport',
+          'symbol-spacing': 500,
+          'text-rotation-alignment': 'map',
+          'text-size': 12,
+          'icon-rotation-alignment': 'viewport'
+        },
+        'paint': {
+          'text-color': 'rgba(65, 65, 65, 1)',
+          'text-halo-width': 2,
+          'text-halo-color': 'rgba(255, 255, 255, 1)'
+        }
+      })
+
       .addLayer({
         id: '11L_POI_YIYUAN', // 医院
         type: 'symbol',

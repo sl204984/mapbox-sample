@@ -25,7 +25,7 @@ export default function (map) {
         'symbol-placement': 'point',
         'text-size': 11,
         'text-padding': 4,
-        'icon-image': 'ic_map_other_cities',
+        'icon-image': 'ic_map_park',
         'text-justify': 'left',
         'text-anchor': 'left',
         'text-offset': [0.5, 0],

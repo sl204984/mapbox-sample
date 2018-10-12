@@ -20,12 +20,12 @@ export default function (map) {
         id: '11L_POI_YIYUAN', // 医院
         type: 'symbol',
         source: CONFIG.addLv11,
-        'source-layer': '11L_POI',
+        'source-layer': 'SD_POI_LEVEL9_1009',
         filter: ['all', ['>=', 'KIND', '170100'],
           ['<=', 'KIND', '170105']
         ],
         'layout': {
-          'text-field': '{newname}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 11,
@@ -49,7 +49,7 @@ export default function (map) {
       //   id: '11L_POI_HOSPITAL', // 医院，卫生所
       //   type: 'symbol',
       //   source: CONFIG.addLv11,
-      //   'source-layer': '11L_POI',
+      //   'source-layer': 'SD_POI_LEVEL9_1009',
       //   filter: ['any',
       //     ['all', ['>=', 'KIND', '170106'],
       //       ['<=', 'KIND', '170110']
@@ -57,7 +57,7 @@ export default function (map) {
       //     ['==', 'KIND', '210105']
       //   ],
       //   'layout': {
-      //     'text-field': '{newname}',
+      //     'text-field': '{NAME}',
       //     'visibility': 'visible',
       //     'symbol-placement': 'point',
       //     'text-size': 11,
@@ -81,12 +81,12 @@ export default function (map) {
         id: '11L_POI_PARK', // 公园
         type: 'symbol',
         source: CONFIG.addLv11,
-        'source-layer': '11L_POI', // py是面
+        'source-layer': 'SD_POI_LEVEL9_1009', // py是面
         filter: ['all', ['>=', 'KIND', '180301'],
           ['<=', 'KIND', '180400']
         ],
         'layout': {
-          'text-field': '{newname}',
+          'text-field': '{NAME}',
           'visibility': 'visible',
           'symbol-placement': 'point',
           'text-size': 11,

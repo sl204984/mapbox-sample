@@ -174,7 +174,7 @@ export default function (map) {
 
 
       .addLayer({
-        id: 'SD_GROALN_ZD_bg', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
+        id: 'GROALN_other_1009_ZD_bg', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -193,7 +193,7 @@ export default function (map) {
           ['==', 'CLASID', '440300'],
           ['==', 'CLASID', '440600'],
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -214,7 +214,7 @@ export default function (map) {
         }
       })
       .addLayer({
-        id: 'SD_GROALN_ZD', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
+        id: 'GROALN_other_1009_ZD', // 路网图层（name字段），栈道、内部道路、机耕路、乡村路、小路 + 专用公路、其他公路、村道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -233,7 +233,7 @@ export default function (map) {
           ['==', 'CLASID', '440300'],
           ['==', 'CLASID', '440600'],
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -255,7 +255,7 @@ export default function (map) {
       })
 
       .addLayer({
-        id: 'SD_GROALN_CGD_bg', // 路网图层（name字段），次干道、县道
+        id: 'GROALN_other_1009_CGD_bg', // 路网图层（name字段），次干道、县道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -263,7 +263,7 @@ export default function (map) {
           ['==', 'CLASID', '420302'],
           ['==', 'CLASID', '430502'],
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -284,7 +284,7 @@ export default function (map) {
         }
       })
       .addLayer({
-        id: 'SD_GROALN_CGD', // 路网图层（name字段），次干道、县道
+        id: 'GROALN_other_1009_CGD', // 路网图层（name字段），次干道、县道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -292,7 +292,7 @@ export default function (map) {
           ['==', 'CLASID', '420302'],
           ['==', 'CLASID', '430502'],
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -314,11 +314,11 @@ export default function (map) {
       })
 
       .addLayer({
-        id: 'SD_GROALN_ZGD_bg', // 路网图层（name字段），主干道
+        id: 'GROALN_other_1009_ZGD_bg', // 路网图层（name字段），主干道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['==', 'CLASID', '430501'],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -339,11 +339,11 @@ export default function (map) {
         }
       })
       .addLayer({
-        id: 'SD_GROALN_ZGD', // 路网图层（name字段），主干道
+        id: 'GROALN_other_1009_ZGD', // 路网图层（name字段），主干道
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['==', 'CLASID', '430501'],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -365,7 +365,7 @@ export default function (map) {
       })
 
       .addLayer({
-        id: 'SD_GROALN_GS_bg', // 路网图层（name字段），高速公路，背景充当描边
+        id: 'GROALN_other_1009_GS_bg', // 路网图层（name字段），高速公路，背景充当描边
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -374,7 +374,7 @@ export default function (map) {
           ['==', 'CLASID', '420706'],
           ['==', 'CLASID', '420600']
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -395,7 +395,7 @@ export default function (map) {
         }
       })
       .addLayer({
-        id: 'SD_GROALN_GS', // 路网图层（name字段），高速公路
+        id: 'GROALN_other_1009_GS', // 路网图层（name字段），高速公路
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
@@ -404,7 +404,7 @@ export default function (map) {
           ['==', 'CLASID', '420706'],
           ['==', 'CLASID', '420600']
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -426,14 +426,14 @@ export default function (map) {
       })
 
       .addLayer({
-        id: 'SD_GROALN_KSL_bg', // 路网图层（name字段），背景充当描边 快速路，高架路
+        id: 'GROALN_other_1009_KSL_bg', // 路网图层（name字段），背景充当描边 快速路，高架路
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
           ['==', 'CLASID', '430200'],
           ['==', 'CLASID', '430300']
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -454,14 +454,14 @@ export default function (map) {
         }
       })
       .addLayer({
-        id: 'SD_GROALN_KSL', // 路网图层（name字段） 快速路，高架路
+        id: 'GROALN_other_1009_KSL', // 路网图层（name字段） 快速路，高架路
         type: 'line',
         source: CONFIG.addLv15,
         filter: ['any',
           ['==', 'CLASID', '430200'],
           ['==', 'CLASID', '430300']
         ],
-        'source-layer': 'SD_GROALN',
+        'source-layer': 'GROALN_other_1009',
         layout: {
           'line-cap': 'round',
           'line-join': 'round',
@@ -483,10 +483,10 @@ export default function (map) {
       })
 
       .addLayer({
-        id: 'SD_GROALN_NAME',
+        id: 'GROALN_other_1009_NAME',
         type: 'symbol',
         source: CONFIG.addLv15,
-        'source-layer': 'SD_GROALN', // LN，line的简写
+        'source-layer': 'GROALN_other_1009', // LN，line的简写
         layout: {
           'text-field': '{NAME}',
           'visibility': 'visible',

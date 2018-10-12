@@ -16,8 +16,8 @@ var map = new mapboxgl.Map({
   pitch: 60,
   bearing: -13.6,
 
-  minzoom: 7,
-  maxzoom: 22,
+  minZoom: 7,
+  maxZoom: 22,
   localIdeographFontFamily: "'黑体'"
 });
 

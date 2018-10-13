@@ -6,7 +6,7 @@
 import CONFIG from '../config';
 
 const _visibleLevel = 15;
-const labelLayerId = 'OTH_POI';
+const labelLayerId = 'GVEGPL';
 
 const style = {
   visibleLevel: _visibleLevel,
@@ -21,39 +21,6 @@ const style = {
     }
   },
   layers: [{
-      id: 'GRESPL_1', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
-      type: 'fill',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_1', // py是面
-      layout: {},
-      paint: {
-        'fill-color': '#CACFD2',
-        'fill-opacity': 1,
-        'fill-antialias': false
-      }
-    }, {
-      id: 'GRESPL_2', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
-      type: 'fill',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_2', // py是面
-      layout: {},
-      paint: {
-        'fill-color': '#CACFD2',
-        'fill-opacity': 1,
-        'fill-antialias': false
-      }
-    }, {
-      id: 'GRESPL_3', // 建筑物图层（高度统计的是H字段，不确定是不是此字段）
-      type: 'fill',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_3', // py是面
-      layout: {},
-      paint: {
-        'fill-color': '#CACFD2',
-        'fill-opacity': 1,
-        'fill-antialias': false
-      }
-    }, {
       id: 'GRFCPL', // 记录了一些公司，养殖场，墓地等区域
       type: 'fill',
       source: 'composite',
@@ -64,7 +31,67 @@ const style = {
         'fill-antialias': false
       }
     },
-
+    /**
+     * 3d建筑
+     * */
+    {
+      'id': 'GRESPL_1_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_1_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        // use an 'interpolate' expression to add a smooth transition effect to the
+        // buildings as the user zooms in
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    },
+    {
+      'id': 'GRESPL_2_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_2_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    }, {
+      'id': 'GRESPL_3_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_3_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    },
     /**
      * 线
      */
@@ -92,8 +119,7 @@ const style = {
     //     'text-color': '#737517',
     //     'text-halo-width': 2,
     //     'text-halo-color': 'rgba(255, 255, 255, 1)'
-    //   },
-    //   labelLayerId: 'GVEGPL'
+    //   }
     // },
     {
       id: 'SD_GHYDLN', // 记录了一些线性的水渠、河沟 不显示  ======> 不显示是不是不妥 =======> 只显示名称
@@ -334,7 +360,8 @@ const style = {
         'line-color': '#D6B95A'
       },
       labelLayerId: 'GVEGPL'
-    }, {
+    },
+    {
       id: 'GROALN_other_1009_ZGD', // 路网图层（name字段），主干道
       type: 'line',
       source: CONFIG.addLv15,
@@ -357,8 +384,7 @@ const style = {
           ]
         },
         'line-color': '#FEEB82'
-      },
-      labelLayerId: 'GVEGPL'
+      }
     }, {
       id: 'GROALN_other_1009_GS_bg', // 路网图层（name字段），高速公路，背景充当描边
       type: 'line',
@@ -495,8 +521,7 @@ const style = {
         'text-color': '#2E7EAF',
         'text-halo-width': 2,
         'text-halo-color': 'rgba(255, 255, 255, 1)'
-      },
-      labelLayerId: 'GVEGPL'
+      }
     },
     /**
      * 点
@@ -658,7 +683,7 @@ const style = {
       id: 'OTH_POI',
       type: 'symbol',
       source: CONFIG.addLv15,
-      'source-layer': 'SD_POI_LEVEL15_1009', // py是面
+      'source-layer': 'SD_POI_LEVEL15_1013', // py是面
       'layout': {
         'text-field': '{NAME}',
         'visibility': 'visible',
@@ -680,67 +705,7 @@ const style = {
         'text-halo-color': 'rgba(255, 255, 255, 1)'
       }
     },
-    /**
-     * 3d建筑
-     * */
-    {
-      'id': 'GRESPL_1_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_1_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        // use an 'interpolate' expression to add a smooth transition effect to the
-        // buildings as the user zooms in
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    },
-    {
-      'id': 'GRESPL_2_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_2_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    }, {
-      'id': 'GRESPL_3_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_3_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    },
+
   ]
 }
 

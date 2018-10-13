@@ -98,8 +98,7 @@ const style = {
         'text-color': 'rgba(65, 65, 65, 1)',
         'text-halo-width': 2,
         'text-halo-color': 'rgba(255, 255, 255, 1)'
-      },
-      labelLayerId: 'GVEGPL'
+      }
     },
     // POI 点
     {

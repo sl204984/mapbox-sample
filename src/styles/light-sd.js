@@ -83,8 +83,10 @@ const layers = [{
     id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
     type: 'line',
     source: 'composite',
-    'source-layer': 'SD_GBOULN', // LN，line的简写
+    'source-layer': 'GBOULN', // LN，line的简写
     filter: ['any',
+      ['==', 'CLASID', '630201'],
+      ['==', 'CLASID', '630202'],
       ['==', 'CLASID', '640201'],
       ['==', 'CLASID', '250100']
     ],

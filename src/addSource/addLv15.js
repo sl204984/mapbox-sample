@@ -32,67 +32,6 @@ const style = {
       }
     },
     /**
-     * 3d建筑
-     * */
-    {
-      'id': 'GRESPL_1_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_1_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        // use an 'interpolate' expression to add a smooth transition effect to the
-        // buildings as the user zooms in
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    },
-    {
-      'id': 'GRESPL_2_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_2_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    }, {
-      'id': 'GRESPL_3_3D',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_GRESPL_3_1009',
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
-        'fill-extrusion-color': '#aaa',
-        'fill-extrusion-height': [
-          "interpolate", ["linear"],
-          ["zoom"],
-          15, 0,
-          15.05, ['*', ['+', ["get", "H"], 1], 3]
-        ],
-        'fill-extrusion-base': 0,
-        'fill-extrusion-opacity': .6
-      },
-      labelLayerId
-    },
-    /**
      * 线
      */
     // {
@@ -705,7 +644,67 @@ const style = {
         'text-halo-color': 'rgba(255, 255, 255, 1)'
       }
     },
-
+    /**
+     * 3d建筑
+     * */
+    {
+      'id': 'GRESPL_1_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_1_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        // use an 'interpolate' expression to add a smooth transition effect to the
+        // buildings as the user zooms in
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    },
+    {
+      'id': 'GRESPL_2_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_2_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    }, {
+      'id': 'GRESPL_3_3D',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_GRESPL_3_1009',
+      'type': 'fill-extrusion',
+      'minzoom': 15,
+      'paint': {
+        'fill-extrusion-color': '#aaa',
+        'fill-extrusion-height': [
+          "interpolate", ["linear"],
+          ["zoom"],
+          15, 0,
+          15.05, ['*', ['+', ["get", "H"], 1], 3]
+        ],
+        'fill-extrusion-base': 0,
+        'fill-extrusion-opacity': .6
+      },
+      labelLayerId
+    },
   ]
 }
 

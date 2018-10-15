@@ -47,7 +47,7 @@ const style = {
         },
         'line-color': '#D6B95A'
       },
-      labelLayerId: 'GVEGPL'
+      labelLayerId: 'GRAILN_bg'
     }, {
       id: 'GROLAN_11_1009', // 路网图层（name字段），次干道、县道
       type: 'line',
@@ -76,7 +76,7 @@ const style = {
         },
         'line-color': '#FEEB82'
       },
-      labelLayerId: 'GVEGPL'
+      labelLayerId: 'GRAILN_bg'
     }, {
       id: 'GROLAN_11_1009_NAME', // 省道名称
       type: 'symbol',

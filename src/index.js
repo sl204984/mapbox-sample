@@ -25,6 +25,8 @@ const _addSourceFunc = function () {
   addSource.addFuncLv8(map);
   addSource.addFuncLv9(map); // 9级的村庄暂时不显示
   addSource.addFuncLv11(map);
+  addSource.addFuncLv12(map);
+  addSource.addFuncLv13(map);
   addSource.addFuncLv15(map);
 }
 

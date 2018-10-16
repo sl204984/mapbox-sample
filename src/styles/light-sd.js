@@ -20,7 +20,7 @@
 
 const _visibleLevel = 7;
 const _sdVisibleLevel = 9; // 省道
-const _ditchVisibleLevel = 12; // 沟和渠道
+const _ditchVisibleLevel = 14; // 沟和渠道
 
 const layers = [{
     id: 'background', // 背景

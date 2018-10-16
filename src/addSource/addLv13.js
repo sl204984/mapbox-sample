@@ -18,17 +18,18 @@ const style = {
     }
   },
   layers: [{
-    id: 'SD_POI_LEVEL13_1009',
+    id: 'SD_POI_LEVEL13_1009_jiudian',
     type: 'symbol',
     source: CONFIG.addLv13,
-    'source-layer': 'SD_POI_LEVEL13_1009', // py是面
+    'source-layer': 'SD_POI_LEVEL13_1009',
+    filter: ['any', ['==', 'KIND', '120101']],
     'layout': {
       'text-field': '{NAME}',
       'visibility': 'visible',
       'symbol-placement': 'point',
       'text-size': 11,
       'text-padding': 4,
-      'icon-image': 'ic_map_park',
+      'icon-image': 'ic_map_jiudian',
       'text-justify': 'left',
       'text-anchor': 'left',
       'text-offset': [0.5, 0],
@@ -38,11 +39,118 @@ const style = {
       'icon-rotation-alignment': 'viewport'
     },
     'paint': {
-      'text-color': '#00ff00',
+      'text-color': 'rgba(65, 65, 65, 1)',
       'text-halo-width': 2,
       'text-halo-color': 'rgba(255, 255, 255, 1)'
     }
-  }]
+  }, {
+    id: 'SD_POI_LEVEL13_1009_chaoshi',
+    type: 'symbol',
+    source: CONFIG.addLv13,
+    'source-layer': 'SD_POI_LEVEL13_1009',
+    filter: ['any', ['==', 'KIND', '130106']],
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'point',
+      'text-size': 11,
+      'text-padding': 4,
+      'icon-image': 'ic_map_chaoshi',
+      'text-justify': 'left',
+      'text-anchor': 'left',
+      'text-offset': [0.5, 0],
+      'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport'
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
+    }
+  }, {
+    id: 'SD_POI_LEVEL13_1009_xuexiao',
+    type: 'symbol',
+    source: CONFIG.addLv13,
+    'source-layer': 'SD_POI_LEVEL13_1009',
+    filter: ['any', ['==', 'KIND', '160105']],
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'point',
+      'text-size': 11,
+      'text-padding': 4,
+      'icon-image': 'ic_map_xuexiao',
+      'text-justify': 'left',
+      'text-anchor': 'left',
+      'text-offset': [0.5, 0],
+      'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport'
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
+    }
+  }, {
+    id: 'SD_POI_LEVEL13_1009_shangchang',
+    type: 'symbol',
+    source: CONFIG.addLv13,
+    'source-layer': 'SD_POI_LEVEL13_1009',
+    filter: ['any', ['==', 'KIND', '130601']],
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'point',
+      'text-size': 11,
+      'text-padding': 4,
+      'icon-image': 'ic_map_shangchang',
+      'text-justify': 'left',
+      'text-anchor': 'left',
+      'text-offset': [0.5, 0],
+      'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport'
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
+    }
+  }, {
+    id: 'SD_POI_LEVEL13_1009_government_other',
+    type: 'symbol',
+    source: CONFIG.addLv13,
+    'source-layer': 'SD_POI_LEVEL13_1009',
+    filter: ['any', ['==', 'KIND', '190100'],
+      ['==', 'KIND', '190102'],
+      ['==', 'KIND', '190103']
+    ],
+    'layout': {
+      'text-field': '{NAME}',
+      'visibility': 'visible',
+      'symbol-placement': 'point',
+      'text-size': 11,
+      'text-padding': 4,
+      'icon-image': 'ic_map_government_other',
+      'text-justify': 'left',
+      'text-anchor': 'left',
+      'text-offset': [0.5, 0],
+      'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport'
+    },
+    'paint': {
+      'text-color': 'rgba(65, 65, 65, 1)',
+      'text-halo-width': 2,
+      'text-halo-color': 'rgba(255, 255, 255, 1)'
+    }
+  }, ]
 };
 
 function _checkSource(map, source) {

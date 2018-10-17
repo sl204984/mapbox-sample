@@ -21,6 +21,17 @@ var map = new mapboxgl.Map({
   localIdeographFontFamily: "'黑体'"
 });
 
+
+// map.on('mousemove', function (e) {
+//   console.log(e.lngLat)
+//   // document.getElementById('info').innerHTML =       /* innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML  */
+//   // e.point is the x, y coordinates of the mousemove event relative
+//   // to the top-left corner of the map
+//   // JSON.stringify(e.point) + '<br />' +
+//   //     // e.lngLat is the longitude, latitude geographical position of the event
+//   // JSON.stringify(e.lngLat);  /* JSON.stringify() 方法可以将任意的 JavaScript 值序列化成 JSON 字符串 */
+// });
+
 const _addSourceFunc = function () {
   addSource.addFuncLv8(map);
   addSource.addFuncLv9(map); // 9级的村庄暂时不显示

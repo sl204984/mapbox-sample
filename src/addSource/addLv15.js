@@ -675,7 +675,9 @@ const style = {
       type: 'symbol',
       source: CONFIG.addLv15,
       'source-layer': 'SD_POI_LEVEL15_1013',
-      filter: ['any', ['==', 'KIND', '110103']],
+      filter: ['any', ['==', 'KIND', '110103'],
+        ['==', 'KIND', '230226']
+      ],
       'layout': {
         'text-field': '{NAME}',
         'visibility': 'visible',
@@ -805,38 +807,13 @@ const style = {
         'text-halo-color': 'rgba(255, 255, 255, 1)'
       }
     }, {
-      id: 'OTH_POI_youju',
-      type: 'symbol',
-      source: CONFIG.addLv15,
-      'source-layer': 'SD_POI_LEVEL15_1013',
-      filter: ['any', ['==', 'KIND', '130203']],
-      'layout': {
-        'text-field': '{NAME}',
-        'visibility': 'visible',
-        'symbol-placement': 'point',
-        'text-size': 11,
-        'text-padding': 4,
-        'icon-image': 'ic_map_youju',
-        'text-justify': 'left',
-        'text-anchor': 'left',
-        'text-offset': [0.5, 0],
-        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
-        'text-pitch-alignment': 'viewport',
-        'text-rotation-alignment': 'viewport',
-        'icon-rotation-alignment': 'viewport'
-      },
-      'paint': {
-        'text-color': 'rgba(65, 65, 65, 1)',
-        'text-halo-width': 2,
-        'text-halo-color': 'rgba(255, 255, 255, 1)'
-      }
-    }, {
       id: 'OTH_POI_others_fun',
       type: 'symbol',
       source: CONFIG.addLv15,
       'source-layer': 'SD_POI_LEVEL15_1013',
       filter: ['any', ['==', 'KIND', '130201'],
         ['==', 'KIND', '130202'],
+        ['==', 'KIND', '130203'],
         ['==', 'KIND', '130301'],
         ['==', 'KIND', '130302'],
         ['==', 'KIND', '130303'],
@@ -863,6 +840,37 @@ const style = {
         ['==', 'KIND', '130805'],
         ['==', 'KIND', '130806'],
         ['==', 'KIND', '130807'],
+        ['==', 'KIND', '200201'],
+        ['==', 'KIND', '200300'],
+        ['==', 'KIND', '200400'],
+        ['==', 'KIND', '200404'],
+        ['==', 'KIND', '200405'],
+        ['==', 'KIND', '210101'],
+        ['==', 'KIND', '210102'],
+        ['==', 'KIND', '210103'],
+        ['==', 'KIND', '210104'],
+        ['==', 'KIND', '210201'],
+        ['==', 'KIND', '210202'],
+        ['==', 'KIND', '210203'],
+        ['==', 'KIND', '210209'],
+        ['==', 'KIND', '210210'],
+        ['==', 'KIND', '210216'],
+        ['==', 'KIND', '210217'],
+        ['==', 'KIND', '210218'],
+        ['==', 'KIND', '210219'],
+        ['==', 'KIND', '210301'],
+        ['==', 'KIND', '210302'],
+        ['==', 'KIND', '210303'],
+        ['==', 'KIND', '210304'],
+        ['==', 'KIND', '210400'],
+        ['==', 'KIND', '230125'],
+        ['==', 'KIND', '230127'],
+        ['==', 'KIND', '230130'],
+        ['==', 'KIND', '230201'],
+        ['==', 'KIND', '230202'],
+        ['==', 'KIND', '240100'],
+        ['==', 'KIND', '250100'],
+        ['==', 'KIND', '250200']
       ],
       'layout': {
         'text-field': '{NAME}',
@@ -1051,7 +1059,25 @@ const style = {
       type: 'symbol',
       source: CONFIG.addLv15,
       'source-layer': 'SD_POI_LEVEL15_1013',
-      filter: ['any', ['==', 'KIND', '170201']],
+      filter: ['any', ['==', 'KIND', '170201'],
+        ['==', 'KIND', '190110'],
+        ['==', 'KIND', '190112'],
+        ['==', 'KIND', '190301'],
+        ['==', 'KIND', '190400'],
+        ['==', 'KIND', '190401'],
+        ['==', 'KIND', '190402'],
+        ['==', 'KIND', '190403'],
+        ['==', 'KIND', '190404'],
+        ['==', 'KIND', '190502'],
+        ['==', 'KIND', '200101'],
+        ['==', 'KIND', '200102'],
+        ['==', 'KIND', '200104'],
+        ['==', 'KIND', '220100'],
+        ['==', 'KIND', '220200'],
+        ['==', 'KIND', '220300'],
+        ['==', 'KIND', '220400'],
+        ['==', 'KIND', '230206'],
+      ],
       'layout': {
         'text-field': '{NAME}',
         'visibility': 'visible',
@@ -1112,7 +1138,9 @@ const style = {
       type: 'symbol',
       source: CONFIG.addLv15,
       'source-layer': 'SD_POI_LEVEL15_1013',
-      filter: ['any', ['==', 'KIND', '180209']],
+      filter: ['any', ['==', 'KIND', '180209'],
+        ['==', 'KIND', '210213']
+      ],
       'layout': {
         'text-field': '{NAME}',
         'visibility': 'visible',
@@ -1146,6 +1174,317 @@ const style = {
         'text-size': 11,
         'text-padding': 4,
         'icon-image': 'ic_map_theater',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_gongan',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '190200'],
+        ['==', 'KIND', '190201']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_gongan',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_gongmu',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '210211']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_gongmu',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_youju',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '210213']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_youju',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_chezhan',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '230100']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_chezhan',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_train_station',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230103'],
+        ['==', 'KIND', '230105']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_train_station',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_highway_exit',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230203']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_highway_exit',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_highway_entry',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230204']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_highway_entry',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_toll',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230209']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_toll',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_parking',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230207'],
+        ['==', 'KIND', '230211'],
+        ['==', 'KIND', '230212'],
+        ['==', 'KIND', '230223'],
+        ['==', 'KIND', '230224'],
+        ['==', 'KIND', '230225'],
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_parking',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_bus_station2',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230213']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_bus_station2',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_jiayouzhan',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '230215'],
+        ['==', 'KIND', '230216'],
+        ['==', 'KIND', '230217'],
+        ['==', 'KIND', '230218']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_jiayouzhan',
         'text-justify': 'left',
         'text-anchor': 'left',
         'text-offset': [0.5, 0],

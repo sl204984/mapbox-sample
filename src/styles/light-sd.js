@@ -432,7 +432,7 @@ const layers = [{
       'icon-image': 'ic_map_zhengfu',
       'text-justify': 'left',
       'text-anchor': 'left',
-      'text-offset': [0.5, 0],
+      'text-offset': [0.8, 0],
       'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
       'text-pitch-alignment': 'viewport',
       'text-rotation-alignment': 'viewport',

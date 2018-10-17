@@ -619,17 +619,533 @@ const style = {
         'text-halo-color': 'rgba(255, 255, 255, 1)'
       }
     }, {
-      id: 'OTH_POI',
+      id: 'OTH_POI_zhongcan',
       type: 'symbol',
       source: CONFIG.addLv15,
-      'source-layer': 'SD_POI_LEVEL15_1013', // py是面
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '110101']],
       'layout': {
         'text-field': '{NAME}',
         'visibility': 'visible',
         'symbol-placement': 'point',
         'text-size': 11,
         'text-padding': 4,
-        // 'icon-image': 'btn_bubble_a_normal',
+        'icon-image': 'ic_map_zhongcan',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_xican',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '110102']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_xican',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_dining',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '110103']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_dining',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_lvdian',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '120102']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_lvdian',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_hotel',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '120103'],
+        ['==', 'KIND', '120104']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_hotel',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_zhuzhai',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '120201']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_zhuzhai',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_others_shopping',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '130101'],
+        ['==', 'KIND', '130102']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_others_shopping',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_youju',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '130203']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_youju',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_others_fun',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '130201'],
+        ['==', 'KIND', '130202'],
+        ['==', 'KIND', '130301'],
+        ['==', 'KIND', '130302'],
+        ['==', 'KIND', '130303'],
+        ['==', 'KIND', '130401'],
+        ['==', 'KIND', '130402'],
+        ['==', 'KIND', '130405'],
+        ['==', 'KIND', '130406'],
+        ['==', 'KIND', '130407'],
+        ['==', 'KIND', '130408'],
+        ['==', 'KIND', '130409'],
+        ['==', 'KIND', '1304010'],
+        ['==', 'KIND', '1304011'],
+        ['==', 'KIND', '130602'],
+        ['==', 'KIND', '130603'],
+        ['==', 'KIND', '130700'],
+        ['==', 'KIND', '130701'],
+        ['==', 'KIND', '130702'],
+        ['==', 'KIND', '130703'],
+        ['==', 'KIND', '130704'],
+        ['==', 'KIND', '130705'],
+        ['==', 'KIND', '130801'],
+        ['==', 'KIND', '130803'],
+        ['==', 'KIND', '130804'],
+        ['==', 'KIND', '130805'],
+        ['==', 'KIND', '130806'],
+        ['==', 'KIND', '130807'],
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_others_fun',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_others_yaodian',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '130501'],
+        ['==', 'KIND', '130502']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_yaodian',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_qicheweixiu',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '140101'],
+        ['==', 'KIND', '140104'],
+        ['==', 'KIND', '140201'],
+        ['==', 'KIND', '140202'],
+        ['==', 'KIND', '140301'],
+        ['==', 'KIND', '140302'],
+        ['==', 'KIND', '140304']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_qicheweixiu',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_bank',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '150101'],
+        ['==', 'KIND', '150103'],
+        ['==', 'KIND', '150104'],
+        ['==', 'KIND', '150200']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_bank',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_school',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '160100'],
+        ['==', 'KIND', '160101'],
+        ['==', 'KIND', '160102'],
+        ['==', 'KIND', '160103'],
+        ['==', 'KIND', '160104'],
+        ['==', 'KIND', '160106'],
+        ['==', 'KIND', '160107'],
+        ['==', 'KIND', '160108'],
+        ['==', 'KIND', '160109']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_school',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_library',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '160201'],
+        ['==', 'KIND', '160202'],
+        ['==', 'KIND', '160203'],
+        ['==', 'KIND', '160204'],
+        ['==', 'KIND', '160205'],
+        ['==', 'KIND', '160206'],
+        ['==', 'KIND', '160207'],
+        ['==', 'KIND', '160208'],
+        ['==', 'KIND', '160209']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_library',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_building',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '170201']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_building',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_yundongchangguan',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any',
+        ['==', 'KIND', '180100'],
+        ['==', 'KIND', '180101'],
+        ['==', 'KIND', '180102'],
+        ['==', 'KIND', '180103'],
+        ['==', 'KIND', '180104'],
+        ['==', 'KIND', '180105'],
+        ['==', 'KIND', '180106'],
+        ['==', 'KIND', '180107']
+      ],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_yundongchangguan',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_dianyingyuan',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '180209']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_dianyingyuan',
+        'text-justify': 'left',
+        'text-anchor': 'left',
+        'text-offset': [0.5, 0],
+        'text-font': ['Arial Unicode MS Blod', 'Open Sans Regular'],
+        'text-pitch-alignment': 'viewport',
+        'text-rotation-alignment': 'viewport',
+        'icon-rotation-alignment': 'viewport'
+      },
+      'paint': {
+        'text-color': 'rgba(65, 65, 65, 1)',
+        'text-halo-width': 2,
+        'text-halo-color': 'rgba(255, 255, 255, 1)'
+      }
+    }, {
+      id: 'OTH_POI_theater',
+      type: 'symbol',
+      source: CONFIG.addLv15,
+      'source-layer': 'SD_POI_LEVEL15_1013',
+      filter: ['any', ['==', 'KIND', '180210']],
+      'layout': {
+        'text-field': '{NAME}',
+        'visibility': 'visible',
+        'symbol-placement': 'point',
+        'text-size': 11,
+        'text-padding': 4,
+        'icon-image': 'ic_map_theater',
         'text-justify': 'left',
         'text-anchor': 'left',
         'text-offset': [0.5, 0],

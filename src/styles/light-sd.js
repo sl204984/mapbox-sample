@@ -31,80 +31,65 @@ const layers = [{
     }
   },
   // 面
-  {
-    id: 'GHYDPL_7L', // 记录了一些水渠、河沟，水库的面状要素
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GHYDPL', // py是面
-    filter: ['any',
-      ['==', 'CLASID', '210200'],
-      ['==', 'CLASID', '230101'],
-      ['==', 'CLASID', '240101']
-    ],
-    layout: {},
-    paint: {
-      'fill-color': '#abc5ef',
-      'fill-opacity': 1,
-      'fill-antialias': false
-    }
-  },
-  {
-    id: 'GHYDPL_OTH', // 记录了一些水渠、河沟，水库的面状要素
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GHYDPL', // py是面
-    filter: ['all',
-      ['!=', 'CLASID', '210200'],
-      ['!=', 'CLASID', '230101'],
-      ['!=', 'CLASID', '240101']
-    ],
-    minzoom: _ditchVisibleLevel,
-    layout: {},
-    paint: {
-      'fill-color': '#abc5ef',
-      'fill-opacity': 1,
-      'fill-antialias': false
-    }
-  },
-  {
-    id: 'GVEGPL', // 记录了绿地
-    type: 'fill',
-    source: 'composite',
-    'source-layer': 'SD_GVEGPL', // py是面
-    layout: {},
-    paint: {
-      'fill-color': '#BBD98D',
-      'fill-opacity': 0.5,
-      'fill-antialias': false
-    }
-  },
-  // 线
-  {
-    id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'GBOULN', // LN，line的简写
-    filter: ['any',
-      ['==', 'CLASID', '630201'],
-      ['==', 'CLASID', '630202'],
-      ['==', 'CLASID', '640201'],
-      ['==', 'CLASID', '250100']
-    ],
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-width': 1,
-      'line-color': '#BBBBBB',
-      'line-offset': 0
-    }
-  },
   // {
-  //   id: 'boundaryline', // 记录了省边界
+  //   id: 'GHYDPL_7L', // 记录了一些水渠、河沟，水库的面状要素
+  //   type: 'fill',
+  //   source: 'composite',
+  //   'source-layer': 'SD_GHYDPL', // py是面
+  //   filter: ['any',
+  //     ['==', 'CLASID', '210200'],
+  //     ['==', 'CLASID', '230101'],
+  //     ['==', 'CLASID', '240101']
+  //   ],
+  //   layout: {},
+  //   paint: {
+  //     'fill-color': '#abc5ef',
+  //     'fill-opacity': 1,
+  //     'fill-antialias': false
+  //   }
+  // },
+  // {
+  //   id: 'GHYDPL_OTH', // 记录了一些水渠、河沟，水库的面状要素
+  //   type: 'fill',
+  //   source: 'composite',
+  //   'source-layer': 'SD_GHYDPL', // py是面
+  //   filter: ['all',
+  //     ['!=', 'CLASID', '210200'],
+  //     ['!=', 'CLASID', '230101'],
+  //     ['!=', 'CLASID', '240101']
+  //   ],
+  //   minzoom: _ditchVisibleLevel,
+  //   layout: {},
+  //   paint: {
+  //     'fill-color': '#abc5ef',
+  //     'fill-opacity': 1,
+  //     'fill-antialias': false
+  //   }
+  // },
+  // {
+  //   id: 'GVEGPL', // 记录了绿地
+  //   type: 'fill',
+  //   source: 'composite',
+  //   'source-layer': 'SD_GVEGPL', // py是面
+  //   layout: {},
+  //   paint: {
+  //     'fill-color': '#BBD98D',
+  //     'fill-opacity': 0.5,
+  //     'fill-antialias': false
+  //   }
+  // },
+  // 线
+  // {
+  //   id: 'GBOULN', // 记录了各个镇的边界，有名字的记录的是省界和岛屿（name不为空）
   //   type: 'line',
   //   source: 'composite',
-  //   'source-layer': 'boundaryline', // LN，line的简写
+  //   'source-layer': 'GBOULN', // LN，line的简写
+  //   filter: ['any',
+  //     ['==', 'CLASID', '630201'],
+  //     ['==', 'CLASID', '630202'],
+  //     ['==', 'CLASID', '640201'],
+  //     ['==', 'CLASID', '250100']
+  //   ],
   //   layout: {
   //     'line-cap': 'round',
   //     'line-join': 'round'
@@ -116,36 +101,36 @@ const layers = [{
   //   }
   // },
 
-  {
-    id: 'GRAILN_bg', // 记录了铁路，底层颜色灰色
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GRAILN', // LN，line的简写
-    minzoom: 7,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round',
-    },
-    paint: {
-      'line-color': '#B6B3B7',
-      'line-width': 2.4
-    }
-  }, {
-    id: 'GRAILN', // 记录了铁路，间隔白色
-    type: 'line',
-    source: 'composite',
-    'source-layer': 'SD_GRAILN', // LN，line的简写
-    minzoom: 7,
-    layout: {
-      'line-cap': 'round',
-      'line-join': 'round'
-    },
-    paint: {
-      'line-color': '#FFFFFF',
-      'line-dasharray': [5, 5],
-      'line-width': 1.6
-    }
-  },
+  // {
+  //   id: 'GRAILN_bg', // 记录了铁路，底层颜色灰色
+  //   type: 'line',
+  //   source: 'composite',
+  //   'source-layer': 'SD_GRAILN', // LN，line的简写
+  //   minzoom: 7,
+  //   layout: {
+  //     'line-cap': 'round',
+  //     'line-join': 'round',
+  //   },
+  //   paint: {
+  //     'line-color': '#B6B3B7',
+  //     'line-width': 2.4
+  //   }
+  // }, {
+  //   id: 'GRAILN', // 记录了铁路，间隔白色
+  //   type: 'line',
+  //   source: 'composite',
+  //   'source-layer': 'SD_GRAILN', // LN，line的简写
+  //   minzoom: 7,
+  //   layout: {
+  //     'line-cap': 'round',
+  //     'line-join': 'round'
+  //   },
+  //   paint: {
+  //     'line-color': '#FFFFFF',
+  //     'line-dasharray': [5, 5],
+  //     'line-width': 1.6
+  //   }
+  // },
 
   {
     id: 'GROLAN_7_1009_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
@@ -154,7 +139,9 @@ const layers = [{
     'source-layer': 'GROLAN_7_1009', // LN，line的简写
     filter: ['all',
       ['!=', 'CLASID', '420101'],
-      ['!=', 'CLASID', '420102']
+      ['!=', 'CLASID', '420102'],
+      ['!=', 'CLASID', '420704'],
+      ['!=', 'CLASID', '420705']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -190,7 +177,9 @@ const layers = [{
     'source-layer': 'GROLAN_7_1009', // 路网图层，国道和省道
     filter: ['all',
       ['!=', 'CLASID', '420101'],
-      ['!=', 'CLASID', '420102']
+      ['!=', 'CLASID', '420102'],
+      ['!=', 'CLASID', '420704'],
+      ['!=', 'CLASID', '420705']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -219,15 +208,16 @@ const layers = [{
       },
       'line-color': '#FEEB82'
     }
-  },
-  {
+  }, {
     id: 'GROLAN_7_1009_SD_NAME', // 省道名称
     type: 'symbol',
     source: 'composite',
     'source-layer': 'GROLAN_7_1009',
     filter: ['all',
       ['!=', 'CLASID', '420101'],
-      ['!=', 'CLASID', '420102']
+      ['!=', 'CLASID', '420102'],
+      ['!=', 'CLASID', '420704'],
+      ['!=', 'CLASID', '420705']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -255,7 +245,9 @@ const layers = [{
     'source-layer': 'GROLAN_7_1009', // LN，line的简写
     filter: ['any',
       ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
+      ['==', 'CLASID', '420102'],
+      ['==', 'CLASID', '420704'],
+      ['==', 'CLASID', '420705']
     ],
     minzoom: _visibleLevel,
     layout: {
@@ -291,7 +283,9 @@ const layers = [{
     'source-layer': 'GROLAN_7_1009', // 路网图层，国道和省道
     filter: ['any',
       ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
+      ['==', 'CLASID', '420102'],
+      ['==', 'CLASID', '420704'],
+      ['==', 'CLASID', '420705']
     ],
     minzoom: _visibleLevel,
     layout: {
@@ -320,15 +314,16 @@ const layers = [{
       },
       'line-color': '#FECD6E'
     }
-  },
-  {
+  }, {
     id: 'GROLAN_7_1009_GD_NAME', // 国道名称
     type: 'symbol',
     source: 'composite',
     'source-layer': 'GROLAN_7_1009',
     filter: ['any',
       ['==', 'CLASID', '420101'],
-      ['==', 'CLASID', '420102']
+      ['==', 'CLASID', '420102'],
+      ['==', 'CLASID', '420704'],
+      ['==', 'CLASID', '420705']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -350,13 +345,51 @@ const layers = [{
   },
 
   {
-    id: 'GROLAN_7_1009_ICON',
+    id: 'GROLAN_7_1009_ICON_GD',
     type: 'symbol',
     source: 'composite',
     'source-layer': 'GROLAN_7_1009',
     minzoom: _visibleLevel,
     filter: ['all',
-      ['!=', 'ENTIID', '']
+      ['!=', 'ENTIID', ''],
+      ['any',
+        ['==', 'CLASID', '420101'],
+        ['==', 'CLASID', '420102'],
+        ['==', 'CLASID', '420704'],
+        ['==', 'CLASID', '420705']
+      ],
+    ],
+    layout: {
+      'text-field': '{ENTIID}',
+      'visibility': 'visible',
+      'symbol-placement': 'line',
+      'text-size': 12,
+      'icon-image': 'ic_map_brown_bg',
+      'icon-text-fit': 'both',
+      'icon-text-fit-padding': [2, 6, 2, 6],
+      'text-justify': 'center',
+      'text-font': ['黑体'],
+      'text-pitch-alignment': 'viewport',
+      'text-rotation-alignment': 'viewport',
+      'icon-rotation-alignment': 'viewport',
+      'text-anchor': 'center',
+      'text-keep-upright': false,
+    },
+    paint: {
+      'text-color': '#FFFFFF'
+    }
+  }, {
+    id: 'GROLAN_7_1009_ICON_SD',
+    type: 'symbol',
+    source: 'composite',
+    'source-layer': 'GROLAN_7_1009',
+    minzoom: _sdVisibleLevel,
+    filter: ['all',
+      ['!=', 'ENTIID', ''],
+      ['!=', 'CLASID', '420101'],
+      ['!=', 'CLASID', '420102'],
+      ['!=', 'CLASID', '420704'],
+      ['!=', 'CLASID', '420705'],
     ],
     layout: {
       'text-field': '{ENTIID}',

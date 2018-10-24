@@ -137,17 +137,23 @@ const layers = [
     }
   },
 
+  // 新加的平滑图层
   {
-    id: 'GROLAN_7_1009_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
+    id: 'GROALN_GAOGUO_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO', // LN，line的简写
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
-      ['!=', 'CLASID', '420705']
+      ['!=', 'CLASID', '420705'],
+      ['!=', 'CLASID', '420706'],
+      ['!=', 'CLASID', '430300'],
+      ['!=', 'CLASID', '430501'],
+      ['!=', 'CLASID', '430502'],
+      ['!=', 'CLASID', '430503']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -178,16 +184,21 @@ const layers = [
     }
   },
   {
-    id: 'GROLAN_7_1009_SD', // 路网图层（name字段），省道
+    id: 'GROALN_GAOGUO_SD', // 路网图层（name字段），省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO', // 路网图层，国道和省道
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
-      ['!=', 'CLASID', '420705']
+      ['!=', 'CLASID', '420705'],
+      ['!=', 'CLASID', '420706'],
+      ['!=', 'CLASID', '430300'],
+      ['!=', 'CLASID', '430501'],
+      ['!=', 'CLASID', '430502'],
+      ['!=', 'CLASID', '430503']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -218,16 +229,21 @@ const layers = [
     }
   },
   {
-    id: 'GROLAN_7_1009_SD_NAME', // 省道名称
+    id: 'GROALN_GAOGUO_SD_NAME', // 省道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009',
+    'source-layer': 'GROALN_GAOGUO',
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
-      ['!=', 'CLASID', '420705']
+      ['!=', 'CLASID', '420705'],
+      ['!=', 'CLASID', '420706'],
+      ['!=', 'CLASID', '430300'],
+      ['!=', 'CLASID', '430501'],
+      ['!=', 'CLASID', '430502'],
+      ['!=', 'CLASID', '430503']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -249,16 +265,21 @@ const layers = [
   },
 
   {
-    id: 'GROLAN_7_1009_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
+    id: 'GROALN_GAOGUO_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO', // LN，line的简写
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
-      ['==', 'CLASID', '420705']
+      ['==', 'CLASID', '420705'],
+      ['==', 'CLASID', '420706'],
+      ['==', 'CLASID', '430300'],
+      ['==', 'CLASID', '430501'],
+      ['==', 'CLASID', '430502'],
+      ['==', 'CLASID', '430503']
     ],
     minzoom: _visibleLevel,
     layout: {
@@ -289,16 +310,21 @@ const layers = [
     }
   },
   {
-    id: 'GROLAN_7_1009_GD', // 路网图层（name字段），国道
+    id: 'GROALN_GAOGUO_GD', // 路网图层（name字段），国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO', // 路网图层，国道和省道
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
-      ['==', 'CLASID', '420705']
+      ['==', 'CLASID', '420705'],
+      ['==', 'CLASID', '420706'],
+      ['==', 'CLASID', '430300'],
+      ['==', 'CLASID', '430501'],
+      ['==', 'CLASID', '430502'],
+      ['==', 'CLASID', '430503']
     ],
     minzoom: _visibleLevel,
     layout: {
@@ -329,16 +355,21 @@ const layers = [
     }
   },
   {
-    id: 'GROLAN_7_1009_GD_NAME', // 国道名称
+    id: 'GROALN_GAOGUO_GD_NAME', // 国道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009',
+    'source-layer': 'GROALN_GAOGUO',
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
-      ['==', 'CLASID', '420705']
+      ['==', 'CLASID', '420705'],
+      ['==', 'CLASID', '420706'],
+      ['==', 'CLASID', '430300'],
+      ['==', 'CLASID', '430501'],
+      ['==', 'CLASID', '430502'],
+      ['==', 'CLASID', '430503']
     ],
     minzoom: _sdVisibleLevel,
     layout: {
@@ -360,10 +391,10 @@ const layers = [
   },
 
   {
-    id: 'GROLAN_7_1009_ICON_GD',
+    id: 'GROALN_GAOGUO_ICON_GD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009',
+    'source-layer': 'GROALN_GAOGUO',
     minzoom: _visibleLevel,
     filter: [
       'all',
@@ -373,7 +404,12 @@ const layers = [
         ['==', 'CLASID', '420101'],
         ['==', 'CLASID', '420102'],
         ['==', 'CLASID', '420704'],
-        ['==', 'CLASID', '420705']
+        ['==', 'CLASID', '420705'],
+        ['==', 'CLASID', '420706'],
+        ['==', 'CLASID', '430300'],
+        ['==', 'CLASID', '430501'],
+        ['==', 'CLASID', '430502'],
+        ['==', 'CLASID', '430503']
       ]
     ],
     layout: {
@@ -397,10 +433,10 @@ const layers = [
     }
   },
   {
-    id: 'GROLAN_7_1009_ICON_SD',
+    id: 'GROALN_GAOGUO_ICON_SD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROLAN_7_1009',
+    'source-layer': 'GROALN_GAOGUO',
     minzoom: _sdVisibleLevel,
     filter: [
       'all',
@@ -408,7 +444,12 @@ const layers = [
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
-      ['!=', 'CLASID', '420705']
+      ['!=', 'CLASID', '420705'],
+      ['!=', 'CLASID', '420706'],
+      ['!=', 'CLASID', '430300'],
+      ['!=', 'CLASID', '430501'],
+      ['!=', 'CLASID', '430502'],
+      ['!=', 'CLASID', '430503']
     ],
     layout: {
       'text-field': '{ENTIID}',
@@ -430,6 +471,8 @@ const layers = [
       'text-color': '#FFFFFF'
     }
   },
+
+  ///////////////////////////////
   // 点
   {
     id: 'SD_POI_LEVEL7_1009', // POI图层
@@ -438,12 +481,7 @@ const layers = [
     'source-layer': 'SD_POI_LEVEL7_1009',
     minzoom: _visibleLevel,
     layout: {
-      'text-field': {
-        stops: [
-          [7, '{NAME}']
-          // [14, '{NAME}人民政府']
-        ]
-      },
+      'text-field': '{NAME}',
       visibility: 'visible',
       'symbol-placement': 'point',
       'text-size': 16,

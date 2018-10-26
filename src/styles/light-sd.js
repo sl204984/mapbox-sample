@@ -140,10 +140,10 @@ const layers = [{
 
   // 新加的平滑图层
   {
-    id: 'GROALN_GAOGUO_0.001_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
+    id: 'GROALN_GAOGUO_MERGE_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO_MERGE', // LN，line的简写
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
@@ -184,10 +184,10 @@ const layers = [{
     }
   },
   {
-    id: 'GROALN_GAOGUO_0.001_SD', // 路网图层（name字段），省道
+    id: 'GROALN_GAOGUO_MERGE_SD', // 路网图层（name字段），省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO_MERGE', // 路网图层，国道和省道
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
@@ -232,10 +232,10 @@ const layers = [{
     }
   },
   {
-    id: 'GROALN_GAOGUO_0.001_SD_NAME', // 省道名称
+    id: 'GROALN_GAOGUO_MERGE_SD_NAME', // 省道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001',
+    'source-layer': 'GROALN_GAOGUO_MERGE',
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
@@ -269,10 +269,10 @@ const layers = [{
   },
 
   {
-    id: 'GROALN_GAOGUO_0.001_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
+    id: 'GROALN_GAOGUO_MERGE_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO_MERGE', // LN，line的简写
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
@@ -317,10 +317,10 @@ const layers = [{
     }
   },
   {
-    id: 'GROALN_GAOGUO_0.001_GD', // 路网图层（name字段），国道
+    id: 'GROALN_GAOGUO_MERGE_GD', // 路网图层（name字段），国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO_MERGE', // 路网图层，国道和省道
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
@@ -365,10 +365,10 @@ const layers = [{
     }
   },
   {
-    id: 'GROALN_GAOGUO_0.001_GD_NAME', // 国道名称
+    id: 'GROALN_GAOGUO_MERGE_GD_NAME', // 国道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001',
+    'source-layer': 'GROALN_GAOGUO_MERGE',
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
@@ -402,10 +402,10 @@ const layers = [{
   },
 
   {
-    id: 'GROALN_GAOGUO_0.001_ICON_GD',
+    id: 'GROALN_GAOGUO_MERGE_ICON_GD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001',
+    'source-layer': 'GROALN_GAOGUO_MERGE',
     minzoom: _visibleLevel,
     maxzoom: _maxVisibleLvel,
     filter: [
@@ -445,10 +445,10 @@ const layers = [{
     }
   },
   {
-    id: 'GROALN_GAOGUO_0.001_ICON_SD',
+    id: 'GROALN_GAOGUO_MERGE_ICON_SD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO_0.001',
+    'source-layer': 'GROALN_GAOGUO_MERGE',
     minzoom: _sdVisibleLevel,
     maxzoom: _maxVisibleLvel,
     filter: [

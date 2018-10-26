@@ -21,7 +21,7 @@ const style = {
     id: 'SD_POI_LEVEL12_1009_chezhan',
     type: 'symbol',
     source: CONFIG.addLv12,
-    'source-layer': 'SD_POI_LEVEL12_1009', // py是面
+    'source-layer': 'SD_POI_LEVEL12_1009', // 
     filter: ['any', ['==', 'KIND', '238108']],
     'layout': {
       'text-field': '{NAME}',
@@ -47,7 +47,7 @@ const style = {
     id: 'SD_POI_LEVEL12_1009_dasha',
     type: 'symbol',
     source: CONFIG.addLv12,
-    'source-layer': 'SD_POI_LEVEL12_1009', // py是面
+    'source-layer': 'SD_POI_LEVEL12_1009', //
     filter: ['any', ['==', 'KIND', '200103']],
     'layout': {
       'text-field': '{NAME}',
@@ -73,7 +73,7 @@ const style = {
     id: 'SD_POI_LEVEL12_1009_building',
     type: 'symbol',
     source: CONFIG.addLv12,
-    'source-layer': 'SD_POI_LEVEL12_1009', // py是面
+    'source-layer': 'SD_POI_LEVEL12_1009', // 
     filter: ['any', ['==', 'KIND', '190111'],
       ['==', 'KIND', '190202'],
       ['==', 'KIND', '190203'],

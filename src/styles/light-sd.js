@@ -20,15 +20,15 @@
 
 const _visibleLevel = 7;
 const _sdVisibleLevel = 9; // 省道
+const _maxVisibleLvel = 24; // 
 const _ditchVisibleLevel = 14; // 沟和渠道
 
-const layers = [
-  {
+const layers = [{
     id: 'background', // 背景
     type: 'background',
     layout: {},
     paint: {
-      'background-color': 'hsl(55, 11%, 96%)'
+      'background-color': '#f5f5f5'
     }
   },
   // 面
@@ -45,7 +45,7 @@ const layers = [
     ],
     layout: {},
     paint: {
-      'fill-color': '#abc5ef',
+      'fill-color': '#c4daf6',
       'fill-opacity': 1,
       'fill-antialias': false
     }
@@ -64,7 +64,7 @@ const layers = [
     minzoom: _ditchVisibleLevel,
     layout: {},
     paint: {
-      'fill-color': '#abc5ef',
+      'fill-color': '#c4daf6',
       'fill-opacity': 1,
       'fill-antialias': false
     }
@@ -75,8 +75,9 @@ const layers = [
     source: 'composite',
     'source-layer': 'SD_GVEGPL', // py是面
     layout: {},
+    minzoom: 11,
     paint: {
-      'fill-color': '#BBD98D',
+      'fill-color': '#d6eccf',
       'fill-opacity': 0.5,
       'fill-antialias': false
     }
@@ -125,7 +126,7 @@ const layers = [
     type: 'line',
     source: 'composite',
     'source-layer': 'SD_GRAILN', // LN，line的简写
-    minzoom: 7,
+    minzoom: _visibleLevel,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -139,23 +140,19 @@ const layers = [
 
   // 新加的平滑图层
   {
-    id: 'GROALN_GAOGUO_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
+    id: 'GROALN_GAOGUO_0.001_SD_bg', // 路网图层（name字段），底部图层，充当描边作用，省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO_0.001', // LN，line的简写
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
       ['!=', 'CLASID', '420705'],
-      ['!=', 'CLASID', '420706'],
-      ['!=', 'CLASID', '430300'],
-      ['!=', 'CLASID', '430501'],
-      ['!=', 'CLASID', '430502'],
-      ['!=', 'CLASID', '430503']
     ],
-    minzoom: _sdVisibleLevel,
+    minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -177,30 +174,34 @@ const layers = [
           [17, 12],
           [18, 14],
           [19, 14],
-          [20, 22]
+          [20, 22],
+          [21, 24],
+          [22, 26],
+
         ]
       },
-      'line-color': '#D6B95A'
+      'line-color': '#ffae00'
     }
   },
   {
-    id: 'GROALN_GAOGUO_SD', // 路网图层（name字段），省道
+    id: 'GROALN_GAOGUO_0.001_SD', // 路网图层（name字段），省道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO_0.001', // 路网图层，国道和省道
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
       ['!=', 'CLASID', '420705'],
-      ['!=', 'CLASID', '420706'],
-      ['!=', 'CLASID', '430300'],
-      ['!=', 'CLASID', '430501'],
-      ['!=', 'CLASID', '430502'],
-      ['!=', 'CLASID', '430503']
+      // ['!=', 'CLASID', '420706'],
+      // ['!=', 'CLASID', '430300'],
+      // ['!=', 'CLASID', '430501'],
+      // ['!=', 'CLASID', '430502'],
+      // ['!=', 'CLASID', '430503']
     ],
-    minzoom: _sdVisibleLevel,
+    minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -222,30 +223,33 @@ const layers = [
           [17, 9],
           [18, 11],
           [19, 11],
-          [20, 19]
+          [20, 19],
+          [21, 22],
+          [22, 24],
         ]
       },
-      'line-color': '#FEEB82'
+      'line-color': '#ffeebb'
     }
   },
   {
-    id: 'GROALN_GAOGUO_SD_NAME', // 省道名称
+    id: 'GROALN_GAOGUO_0.001_SD_NAME', // 省道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO',
+    'source-layer': 'GROALN_GAOGUO_0.001',
     filter: [
       'all',
       ['!=', 'CLASID', '420101'],
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
       ['!=', 'CLASID', '420705'],
-      ['!=', 'CLASID', '420706'],
-      ['!=', 'CLASID', '430300'],
-      ['!=', 'CLASID', '430501'],
-      ['!=', 'CLASID', '430502'],
-      ['!=', 'CLASID', '430503']
+      // ['!=', 'CLASID', '420706'],
+      // ['!=', 'CLASID', '430300'],
+      // ['!=', 'CLASID', '430501'],
+      // ['!=', 'CLASID', '430502'],
+      // ['!=', 'CLASID', '430503']
     ],
-    minzoom: _sdVisibleLevel,
+    minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'text-field': '{NAME}',
       visibility: 'visible',
@@ -265,23 +269,24 @@ const layers = [
   },
 
   {
-    id: 'GROALN_GAOGUO_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
+    id: 'GROALN_GAOGUO_0.001_GD_bg', // 路网图层（name字段），底部图层，充当描边作用，国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO', // LN，line的简写
+    'source-layer': 'GROALN_GAOGUO_0.001', // LN，line的简写
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
       ['==', 'CLASID', '420705'],
-      ['==', 'CLASID', '420706'],
-      ['==', 'CLASID', '430300'],
-      ['==', 'CLASID', '430501'],
-      ['==', 'CLASID', '430502'],
-      ['==', 'CLASID', '430503']
+      // ['==', 'CLASID', '420706'],
+      // ['==', 'CLASID', '430300'],
+      // ['==', 'CLASID', '430501'],
+      // ['==', 'CLASID', '430502'],
+      // ['==', 'CLASID', '430503']
     ],
     minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -303,30 +308,33 @@ const layers = [
           [17, 12],
           [18, 14],
           [19, 14],
-          [20, 22]
+          [20, 22],
+          [21, 24],
+          [22, 26],
         ]
       },
-      'line-color': '#B06237'
+      'line-color': '#f9bd09'
     }
   },
   {
-    id: 'GROALN_GAOGUO_GD', // 路网图层（name字段），国道
+    id: 'GROALN_GAOGUO_0.001_GD', // 路网图层（name字段），国道
     type: 'line',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO', // 路网图层，国道和省道
+    'source-layer': 'GROALN_GAOGUO_0.001', // 路网图层，国道和省道
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
       ['==', 'CLASID', '420705'],
-      ['==', 'CLASID', '420706'],
-      ['==', 'CLASID', '430300'],
-      ['==', 'CLASID', '430501'],
-      ['==', 'CLASID', '430502'],
-      ['==', 'CLASID', '430503']
+      // ['==', 'CLASID', '420706'],
+      // ['==', 'CLASID', '430300'],
+      // ['==', 'CLASID', '430501'],
+      // ['==', 'CLASID', '430502'],
+      // ['==', 'CLASID', '430503']
     ],
     minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'line-cap': 'round',
       'line-join': 'round'
@@ -348,30 +356,33 @@ const layers = [
           [17, 9],
           [18, 11],
           [19, 11],
-          [20, 19]
+          [20, 19],
+          [21, 22],
+          [22, 24],
         ]
       },
-      'line-color': '#FECD6E'
+      'line-color': '#fed669'
     }
   },
   {
-    id: 'GROALN_GAOGUO_GD_NAME', // 国道名称
+    id: 'GROALN_GAOGUO_0.001_GD_NAME', // 国道名称
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO',
+    'source-layer': 'GROALN_GAOGUO_0.001',
     filter: [
       'any',
       ['==', 'CLASID', '420101'],
       ['==', 'CLASID', '420102'],
       ['==', 'CLASID', '420704'],
       ['==', 'CLASID', '420705'],
-      ['==', 'CLASID', '420706'],
-      ['==', 'CLASID', '430300'],
-      ['==', 'CLASID', '430501'],
-      ['==', 'CLASID', '430502'],
-      ['==', 'CLASID', '430503']
+      // ['==', 'CLASID', '420706'],
+      // ['==', 'CLASID', '430300'],
+      // ['==', 'CLASID', '430501'],
+      // ['==', 'CLASID', '430502'],
+      // ['==', 'CLASID', '430503']
     ],
-    minzoom: _sdVisibleLevel,
+    minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     layout: {
       'text-field': '{NAME}',
       visibility: 'visible',
@@ -391,11 +402,12 @@ const layers = [
   },
 
   {
-    id: 'GROALN_GAOGUO_ICON_GD',
+    id: 'GROALN_GAOGUO_0.001_ICON_GD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO',
+    'source-layer': 'GROALN_GAOGUO_0.001',
     minzoom: _visibleLevel,
+    maxzoom: _maxVisibleLvel,
     filter: [
       'all',
       ['!=', 'ENTIID', ''],
@@ -405,11 +417,11 @@ const layers = [
         ['==', 'CLASID', '420102'],
         ['==', 'CLASID', '420704'],
         ['==', 'CLASID', '420705'],
-        ['==', 'CLASID', '420706'],
-        ['==', 'CLASID', '430300'],
-        ['==', 'CLASID', '430501'],
-        ['==', 'CLASID', '430502'],
-        ['==', 'CLASID', '430503']
+        // ['==', 'CLASID', '420706'],
+        // ['==', 'CLASID', '430300'],
+        // ['==', 'CLASID', '430501'],
+        // ['==', 'CLASID', '430502'],
+        // ['==', 'CLASID', '430503']
       ]
     ],
     layout: {
@@ -417,7 +429,7 @@ const layers = [
       visibility: 'visible',
       'symbol-placement': 'line',
       'text-size': 12,
-      'icon-image': 'ic_map_brown_bg',
+      'icon-image': 'ic_map_gh.9',
       'icon-text-fit': 'both',
       'icon-text-fit-padding': [2, 6, 2, 6],
       'text-justify': 'center',
@@ -433,11 +445,12 @@ const layers = [
     }
   },
   {
-    id: 'GROALN_GAOGUO_ICON_SD',
+    id: 'GROALN_GAOGUO_0.001_ICON_SD',
     type: 'symbol',
     source: 'composite',
-    'source-layer': 'GROALN_GAOGUO',
+    'source-layer': 'GROALN_GAOGUO_0.001',
     minzoom: _sdVisibleLevel,
+    maxzoom: _maxVisibleLvel,
     filter: [
       'all',
       ['!=', 'ENTIID', ''],
@@ -445,18 +458,18 @@ const layers = [
       ['!=', 'CLASID', '420102'],
       ['!=', 'CLASID', '420704'],
       ['!=', 'CLASID', '420705'],
-      ['!=', 'CLASID', '420706'],
-      ['!=', 'CLASID', '430300'],
-      ['!=', 'CLASID', '430501'],
-      ['!=', 'CLASID', '430502'],
-      ['!=', 'CLASID', '430503']
+      // ['!=', 'CLASID', '420706'],
+      // ['!=', 'CLASID', '430300'],
+      // ['!=', 'CLASID', '430501'],
+      // ['!=', 'CLASID', '430502'],
+      // ['!=', 'CLASID', '430503']
     ],
     layout: {
       'text-field': '{ENTIID}',
       visibility: 'visible',
       'symbol-placement': 'line',
       'text-size': 12,
-      'icon-image': 'ic_map_brown_bg',
+      'icon-image': 'ic_map_sh.9',
       'icon-text-fit': 'both',
       'icon-text-fit-padding': [2, 6, 2, 6],
       'text-justify': 'center',

@@ -45,7 +45,7 @@ const style = {
             [20, 21]
           ]
         },
-        'line-color': '#D6B95A'
+        'line-color': '#d8d8d8'
       },
       labelLayerId: 'GRAILN_bg'
     }, {
@@ -74,11 +74,11 @@ const style = {
             [20, 18]
           ]
         },
-        'line-color': '#FEEB82'
+        'line-color': '#FFFFFF'
       },
       labelLayerId: 'GRAILN_bg'
     }, {
-      id: 'GROLAN_11_1009_NAME', // 省道名称
+      id: 'GROLAN_11_1009_NAME', // 次干道、县道名称
       type: 'symbol',
       source: CONFIG.addLv11,
       'source-layer': 'GROLAN_11_1009',

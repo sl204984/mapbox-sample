@@ -173,7 +173,7 @@ const style = {
             [20, 17.5]
           ]
         },
-        'line-color': '#DCD2AD'
+        'line-color': '#d8d8d8'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -213,7 +213,7 @@ const style = {
             [20, 16]
           ]
         },
-        'line-color': '#FEFEFE'
+        'line-color': '#FFFFFF'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -242,7 +242,7 @@ const style = {
             [20, 15]
           ]
         },
-        'line-color': '#D6C878'
+        'line-color': '#d8d8d8'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -271,7 +271,7 @@ const style = {
             [20, 14]
           ]
         },
-        'line-color': '#FEF091'
+        'line-color': '#FFFFFF'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -296,7 +296,7 @@ const style = {
             [20, 16]
           ]
         },
-        'line-color': '#D6B95A'
+        'line-color': '#ffae00'
       },
       labelLayerId: 'GVEGPL'
     },
@@ -322,7 +322,7 @@ const style = {
             [20, 14]
           ]
         },
-        'line-color': '#FEEB82'
+        'line-color': '#ffeebb'
       }
     }, {
       id: 'GROALN_other_1009_GS_bg', // 路网图层（name字段），高速公路，背景充当描边
@@ -351,7 +351,7 @@ const style = {
             [20, 20]
           ]
         },
-        'line-color': '#5E37AA'
+        'line-color': '#ffae00'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -381,7 +381,7 @@ const style = {
             [20, 19]
           ]
         },
-        'line-color': '#BA92F1'
+        'line-color': '#ffeebb'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -409,7 +409,7 @@ const style = {
             [20, 20]
           ]
         },
-        'line-color': '#5E37AA'
+        'line-color': '#ffae00'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -437,7 +437,7 @@ const style = {
             [20, 19]
           ]
         },
-        'line-color': '#BA92F1'
+        'line-color': '#ffeebb'
       },
       labelLayerId: 'GVEGPL'
     }, {
@@ -462,6 +462,7 @@ const style = {
         'text-halo-color': 'rgba(255, 255, 255, 1)'
       }
     },
+
     /**
      * 点
      */
